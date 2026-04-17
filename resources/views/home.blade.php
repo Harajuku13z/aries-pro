@@ -205,7 +205,7 @@
             @php
             $expertises = [
                 ['num' => '01', 'title' => 'Conseil stratégique', 'desc' => "Analyse de marché, positionnement concurrentiel, feuille de route opérationnelle. Nous traduisons votre ambition en plan d'action crédible."],
-                ['num' => '02', 'title' => 'Levée de fonds', 'desc' => 'Structuration des dossiers d'investissement, mise en relation avec investisseurs institutionnels et privés, négociation des termes.'],
+                ['num' => '02', 'title' => 'Levée de fonds', 'desc' => "Structuration des dossiers d'investissement, mise en relation avec investisseurs institutionnels et privés, négociation des termes."],
                 ['num' => '03', 'title' => 'Intelligence économique', 'desc' => 'Veille stratégique, analyse des risques, cartographie des acteurs et opportunités sur les marchés africains.'],
                 ['num' => '04', 'title' => 'Structuration & investissement', 'desc' => 'Montage financier, optimisation fiscale, gestion des parties prenantes et sécurisation des investissements.'],
             ];
@@ -250,7 +250,7 @@
                 <div class="h-pillars reveal reveal-delay-3">
                     @php
                     $pillars = [
-                        ['icon' => '◆', 'title' => 'Vision long terme', 'desc' => 'Des stratégies pensées pour durer, pas pour briller le temps d'un pitch.'],
+                        ['icon' => '◆', 'title' => 'Vision long terme', 'desc' => "Des stratégies pensées pour durer, pas pour briller le temps d'un pitch."],
                         ['icon' => '◆', 'title' => 'Expertise locale + internationale', 'desc' => 'Connaissance fine du terrain africain, standards financiers internationaux.'],
                         ['icon' => '◆', 'title' => 'Accompagnement sur mesure', 'desc' => 'Chaque dossier est traité avec une attention et une personnalisation totale.'],
                         ['icon' => '◆', 'title' => "Réseau d'influence", 'desc' => 'Accès aux décideurs, investisseurs et institutions qui comptent.'],

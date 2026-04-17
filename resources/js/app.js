@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.documentElement;
     const header = document.querySelector('.site-header');
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuClose = document.getElementById('menu-close');
-    const mobileMenu = document.getElementById('mobile-menu');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     root.classList.add('has-motion');
@@ -16,39 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', onScroll, { passive: true });
         onScroll();
     }
-
-    const setMenuState = (isOpen) => {
-        if (!mobileMenu) {
-            return;
-        }
-
-        mobileMenu.classList.toggle('open', isOpen);
-        mobileMenu.setAttribute('aria-hidden', String(!isOpen));
-        document.body.style.overflow = isOpen ? 'hidden' : '';
-        document.body.classList.toggle('menu-open', isOpen);
-
-        if (menuToggle) {
-            menuToggle.setAttribute('aria-expanded', String(isOpen));
-        }
-    };
-
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => setMenuState(true));
-    }
-
-    if (menuClose) {
-        menuClose.addEventListener('click', () => setMenuState(false));
-    }
-
-    document.querySelectorAll('#mobile-menu a').forEach((link) => {
-        link.addEventListener('click', () => setMenuState(false));
-    });
-
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            setMenuState(false);
-        }
-    });
 
     const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 

@@ -64,8 +64,8 @@
 <section class="h-hero aries-landing-hero" id="accueil" aria-label="Accueil ARIES">
     <div class="h-hero__media">
         <img
-            src="{{ asset('images/team-meeting.jpg') }}"
-            alt="Échange entre décideurs illustrant l'accompagnement stratégique d'ARIES Investissements"
+            src="{{ asset('images/lion-ambition.jpg') }}"
+            alt="Lion illustrant la vision, la maîtrise et l'ambition portées par ARIES Investissements"
             loading="eager"
         >
         <div class="h-hero__overlay"></div>

@@ -1,138 +1,165 @@
 @extends('layouts.app')
 
 @section('title', 'Présentation — ARIES Investissements')
-@section('description', 'ARIES Investissements, société de conseil financier et banque d\'affaires basée à Brazzaville. Notre histoire, notre mission, nos valeurs.')
+@section('description', "ARIES Investissements, société de conseil financier et banque d'affaires basée à Brazzaville. Notre histoire, notre mission et notre vision de l'investissement en Afrique.")
 
 @section('content')
+@php
+    $capabilities = [
+        [
+            'title' => 'Conseil stratégique',
+            'text' => "Définition de vision, analyse de marché, positionnement et accompagnement des décisions structurantes.",
+        ],
+        [
+            'title' => 'Levée de fonds',
+            'text' => "Structuration et exécution de levées de dette ou de fonds propres auprès d'investisseurs qualifiés.",
+        ],
+        [
+            'title' => 'Intelligence économique',
+            'text' => "Lecture fine des marchés, des acteurs et des dynamiques locales pour décider avec confiance.",
+        ],
+    ];
 
-{{-- Page Hero --}}
-<section class="page-hero">
-    <div class="hero-grid-pattern opacity-40"></div>
-    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 xl:px-20 relative z-10">
-        <div class="reveal flex items-center gap-3 mb-4">
-            <span class="section-label">Qui sommes-nous</span>
-            <span class="gold-line"></span>
+    $values = [
+        [
+            'eyebrow' => 'Indépendance',
+            'text' => "Nous ne défendons que les intérêts de nos clients et formulons des recommandations libres de tout conflit d'intérêt.",
+        ],
+        [
+            'eyebrow' => 'Professionnalisme',
+            'text' => "Chaque mission est conduite au standard des meilleures pratiques internationales, avec une vraie adaptation au terrain africain.",
+        ],
+        [
+            'eyebrow' => 'Rigueur',
+            'text' => "Nos analyses reposent sur des données solides, une lecture contextuelle précise et une exigence d'exécution constante.",
+        ],
+    ];
+@endphp
+
+<section class="page-hero" aria-label="Présentation ARIES">
+    <div class="page-hero__media">
+        <img src="{{ asset('images/team-photo.jpg') }}" alt="L'équipe dirigeante d'ARIES Investissements" loading="eager">
+        <div class="page-hero__overlay"></div>
+    </div>
+
+    <div class="page-hero__inner">
+        <div class="page-hero__content">
+            <p class="page-hero__kicker reveal">Qui sommes-nous</p>
+            <h1 class="page-hero__title reveal reveal-delay-1">Présentation</h1>
+            <p class="page-hero__sub reveal reveal-delay-2">
+                ARIES Investissements est une maison de conseil financier à vocation de banque d'affaires,
+                ancrée à Brazzaville et tournée vers l'accompagnement des investisseurs, institutions et porteurs de projets en Afrique.
+            </p>
+            <div class="page-hero__pills reveal reveal-delay-3">
+                <span>Brazzaville</span>
+                <span>Washington</span>
+                <span>Conseil financier</span>
+            </div>
         </div>
-        <h1 class="font-display text-white reveal reveal-delay-1" style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 500; line-height: 1.1;">
-            Présentation
-        </h1>
     </div>
 </section>
 
-{{-- Intro --}}
-<section class="py-28 bg-[#FAFAF8]">
-    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 xl:px-20">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-            <div class="lg:col-span-7">
-                <div class="reveal flex items-center gap-3 mb-6">
-                    <span class="section-label">Notre société</span>
-                    <span class="gold-line"></span>
-                </div>
-                <h2 class="section-title mb-8 reveal reveal-delay-1">
-                    Une banque d'affaires<br>au cœur de l'Afrique
-                </h2>
-                <div class="space-y-5 text-[#4A5568] leading-relaxed">
-                    <p class="reveal reveal-delay-2">
-                        ARIES Investissements est une société de conseil financier à vocation de banque d'affaires, fondée et basée en République du Congo. Nous accompagnons investisseurs et porteurs de projets dans leurs ambitions en Afrique, en apportant une expertise complète qui couvre l'ensemble du spectre du conseil financier.
-                    </p>
-                    <p class="reveal reveal-delay-3">
-                        Notre positionnement unique repose sur la maîtrise profonde de l'environnement africain, la connaissance des acteurs institutionnels, privés et de développement opérant sur le continent, et la capacité à structurer des solutions financières adaptées aux réalités locales tout en répondant aux standards internationaux.
-                    </p>
-                    <p class="reveal reveal-delay-4">
-                        De Brazzaville à Washington, notre ancrage géographique nous permet de tisser des ponts entre les investisseurs internationaux et les opportunités africaines, dans un dialogue permanent avec les acteurs locaux.
-                    </p>
-                </div>
+<section class="page-section page-section--soft">
+    <div class="h-container">
+        <div class="aries-split aries-split--match-height">
+            <div class="aries-split__media reveal-left">
+                <img src="{{ asset('images/about-africa.jpg') }}" alt="Vue urbaine illustrant l'ancrage africain d'ARIES" loading="lazy">
             </div>
-            <div class="lg:col-span-5">
-                <div class="relative reveal-right">
-                    <img
-                        src="{{ asset('images/team-photo.jpg') }}"
-                        alt="ARIES Investissements"
-                        class="w-full object-cover"
-                        style="height: 420px;"
-                        loading="lazy"
-                    >
-                    <div class="absolute -bottom-4 -right-4 w-20 h-20 border-r-2 border-b-2 border-[#C8A55A] opacity-30"></div>
+
+            <div class="aries-split__content reveal-right">
+                <p class="h-kicker">Notre société</p>
+                <h2 class="aries-split__title">Une banque d'affaires au cœur de l'Afrique</h2>
+                <div class="aries-split__text">
+                    <p>
+                        ARIES Investissements accompagne investisseurs et porteurs de projets dans leurs ambitions africaines
+                        avec une expertise couvrant l'ensemble du spectre du conseil financier.
+                    </p>
+                    <p>
+                        Notre positionnement repose sur la maîtrise de l'environnement africain, la connaissance des acteurs
+                        institutionnels, privés et de développement, ainsi que la capacité à structurer des solutions adaptées aux réalités locales.
+                    </p>
+                    <p>
+                        De Brazzaville à Washington, nous créons des ponts entre capitaux, projets et opportunités,
+                        avec une approche disciplinée, confidentielle et orientée résultats.
+                    </p>
                 </div>
+                <a href="{{ route('contact') }}" class="h-btn h-btn--primary">
+                    Échanger avec ARIES
+                    <svg viewBox="0 0 12 13" fill="none" aria-hidden="true">
+                        <path d="M1.78 3.04h5.85L0 10.68l1.81 1.81 7.63-7.63v5.85H12V.49H1.78v2.55z" fill="currentColor"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </div>
 </section>
 
-{{-- Mission --}}
-<section class="py-28 bg-[#060E1A] relative overflow-hidden">
-    <div class="hero-grid-pattern opacity-25"></div>
-    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 xl:px-20 relative z-10">
-        <div class="max-w-3xl">
-            <div class="reveal flex items-center gap-3 mb-6">
-                <span class="section-label">Notre mission</span>
-                <span class="gold-line"></span>
-            </div>
-            <h2 class="section-title-light mb-8 reveal reveal-delay-1">
-                Faire émerger de nouveaux<br>
-                <em class="text-[#C8A55A]">champions africains</em>
-            </h2>
-            <p class="text-[rgba(255,255,255,0.65)] text-lg leading-relaxed mb-10 reveal reveal-delay-2" style="font-weight: 300;">
-                Notre mission est de contribuer activement à la transformation économique de l'Afrique en accompagnant l'émergence de champions nationaux et régionaux. Nous croyons profondément dans le potentiel africain et dans la capacité du secteur privé à jouer un rôle moteur dans le développement du continent.
+<section class="page-section page-section--dark">
+    <div class="h-container">
+        <div class="page-intro reveal">
+            <p class="h-kicker h-kicker--light">Notre mission</p>
+            <h2 class="page-title page-title--light">Faire émerger de nouveaux champions africains</h2>
+            <p class="page-text page-text--light">
+                Nous croyons dans le potentiel africain et dans la capacité du secteur privé à accélérer la transformation économique du continent.
+                Notre rôle est de rendre ce potentiel lisible, finançable et exécutable.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            @foreach([
-                ['title' => 'Conseil stratégique', 'desc' => 'Définition de vision, stratégie d\'entrée sur les marchés, due diligence et advisory transaction.'],
-                ['title' => 'Levée de fonds',      'desc' => 'Structuration et exécution de levées de dette et de fonds propres auprès d\'investisseurs qualifiés.'],
-                ['title' => 'Intelligence éco.',   'desc' => 'Connaissance des marchés, des acteurs et de l\'environnement réglementaire pour décider en confiance.'],
-            ] as $i => $item)
-            <div class="reveal reveal-delay-{{ $i + 1 }} p-6 border border-white/10 hover:border-[#C8A55A] transition-colors duration-300">
-                <h3 class="font-display text-white text-lg font-medium mb-3">{{ $item['title'] }}</h3>
-                <p class="text-[#8A8F9A] text-sm leading-relaxed">{{ $item['desc'] }}</p>
-            </div>
+        <div class="page-card-grid">
+            @foreach($capabilities as $index => $capability)
+                <article class="page-card page-card--dark reveal reveal-delay-{{ $index + 1 }}">
+                    <span class="page-card__num">{{ sprintf('%02d', $index + 1) }}</span>
+                    <h3 class="page-card__title">{{ $capability['title'] }}</h3>
+                    <p class="page-card__text">{{ $capability['text'] }}</p>
+                </article>
             @endforeach
         </div>
     </div>
 </section>
 
-{{-- Valeurs --}}
-<section class="py-28 bg-[#F6F4F0]">
-    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 xl:px-20">
-        <div class="text-center mb-16">
-            <div class="reveal flex items-center justify-center gap-3 mb-4">
-                <span class="gold-line" style="background: linear-gradient(90deg, transparent, #C8A55A)"></span>
-                <span class="section-label">Nos valeurs</span>
-                <span class="gold-line"></span>
-            </div>
-            <h2 class="section-title reveal reveal-delay-1">Les piliers de notre engagement</h2>
+<section class="page-section page-section--warm">
+    <div class="h-container">
+        <div class="page-intro reveal">
+            <p class="h-kicker">Nos valeurs</p>
+            <h2 class="page-title">Les piliers de notre engagement</h2>
+            <p class="page-text">
+                Notre méthode s'appuie sur trois principes simples : lucidité stratégique, exigence d'exécution et fidélité absolue à l'intérêt du client.
+            </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            @foreach([
-                ['letter' => 'I', 'title' => 'Indépendance', 'desc' => 'Nous ne représentons que les intérêts de nos clients. Notre indépendance vis-à-vis des établissements financiers nous permet de garantir l\'objectivité de nos recommandations et la neutralité de nos conseils.'],
-                ['letter' => 'P', 'title' => 'Professionnalisme', 'desc' => 'Chaque mission est menée avec le même niveau d\'exigence que les meilleures pratiques internationales, adapté aux réalités africaines. Nous nous engageons sur la qualité de notre travail et la confidentialité de vos informations.'],
-                ['letter' => 'R', 'title' => 'Rigueur', 'desc' => 'L\'analyse rigoureuse est au cœur de notre méthodologie. Nous fondons nos recommandations sur des données factuelles, des analyses approfondies et une connaissance intime des marchés africains.'],
-            ] as $i => $val)
-            <div class="reveal reveal-delay-{{ $i + 1 }} text-center p-10 bg-white border border-[rgba(11,29,58,0.08)] hover:shadow-xl transition-shadow duration-400">
-                <div class="w-16 h-16 border-2 border-[#C8A55A] flex items-center justify-center mx-auto mb-6">
-                    <span class="font-display text-2xl font-medium text-[#C8A55A]">{{ $val['letter'] }}</span>
-                </div>
-                <h3 class="font-display text-[#0B1D3A] text-xl font-medium mb-4">{{ $val['title'] }}</h3>
-                <p class="text-[#6B7280] text-sm leading-relaxed">{{ $val['desc'] }}</p>
-            </div>
+
+        <div class="page-card-grid">
+            @foreach($values as $index => $value)
+                <article class="page-card reveal reveal-delay-{{ $index + 1 }}">
+                    <span class="page-card__eyebrow">{{ $value['eyebrow'] }}</span>
+                    <p class="page-card__text">{{ $value['text'] }}</p>
+                </article>
             @endforeach
         </div>
     </div>
 </section>
 
-{{-- CTA --}}
-<section class="py-20 bg-[#0B1D3A]">
-    <div class="max-w-[1440px] mx-auto px-6 lg:px-12 xl:px-20 text-center">
-        <h2 class="section-title-light mb-6 reveal">Prêt à concrétiser votre projet ?</h2>
-        <p class="text-[rgba(255,255,255,0.6)] mb-8 max-w-lg mx-auto reveal reveal-delay-1">Contactez nos experts pour une première discussion confidentielle.</p>
-        <a href="{{ route('contact') }}" class="btn-primary reveal reveal-delay-2">
-            Nous contacter
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-        </a>
+<section class="aries-home-section aries-cta-band-section" aria-label="Appel à l'action présentation">
+    <div class="h-container">
+        <div class="aries-cta-band reveal">
+            <div class="aries-cta-band__media">
+                <img src="{{ asset('images/hero-building.jpg') }}" alt="Environnement d'affaires en Afrique" loading="lazy">
+            </div>
+
+            <div class="aries-cta-band__content">
+                <p class="h-kicker">Construisons la suite</p>
+                <h2 class="aries-cta-band__title">Une vision locale, une exécution exigeante</h2>
+                <p class="aries-cta-band__text">
+                    Si vous cherchez un partenaire capable d'aligner stratégie, réseau et discipline financière,
+                    ARIES est prêt à cadrer avec vous la prochaine étape.
+                </p>
+                <a href="{{ route('contact') }}" class="h-btn h-btn--dark">
+                    Nous contacter
+                    <svg viewBox="0 0 12 13" fill="none" aria-hidden="true">
+                        <path d="M1.78 3.04h5.85L0 10.68l1.81 1.81 7.63-7.63v5.85H12V.49H1.78v2.55z" fill="currentColor"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
     </div>
 </section>
-
 @endsection

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -29,6 +29,7 @@
 
     --f-display: 'Playfair Display', Georgia, serif;
     --f-body:    'Inter', -apple-system, sans-serif;
+    --f-hero:    'Manrope', 'Inter', -apple-system, sans-serif;
 
     --W:    1320px;
     --pad:  clamp(1.25rem, 5vw, 5rem);
@@ -613,16 +614,16 @@ html.menu-open body {
 }
 
 .aries-landing-hero .h-hero__media img {
-    object-position: center 32%;
-    transform: scale(1.03);
+    object-position: center center;
+    transform: scale(1.04);
 }
 
 .aries-landing-hero.loaded .h-hero__media img { transform: scale(1); }
 
 .aries-landing-hero .h-hero__overlay {
     background:
-        linear-gradient(90deg, rgba(19,12,5,.88) 0%, rgba(19,12,5,.58) 52%, rgba(19,12,5,.18) 100%),
-        linear-gradient(180deg, rgba(19,12,5,.12) 0%, rgba(19,12,5,.48) 100%);
+        linear-gradient(90deg, rgba(19,12,5,.42) 0%, rgba(19,12,5,.26) 42%, rgba(19,12,5,.08) 72%, rgba(19,12,5,.18) 100%),
+        linear-gradient(180deg, rgba(19,12,5,.14) 0%, rgba(19,12,5,.42) 100%);
 }
 
 .aries-landing-hero__shell {
@@ -656,23 +657,20 @@ html.menu-open body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 66rem;
+    max-width: 72rem;
+    padding-top: 2vh;
 }
-
-.aries-landing-hero .h-kicker {
-    color: rgba(255,255,255,.78);
-}
-
-.aries-landing-hero .h-kicker::before { background: var(--gold); }
 
 .aries-landing-hero__title {
-    font-family: var(--f-body);
-    font-size: clamp(4rem, 9.5vw, 7.6rem);
-    font-weight: 700;
-    line-height: .9;
-    letter-spacing: -.08em;
+    font-family: var(--f-hero);
+    font-size: clamp(4.6rem, 9.8vw, 8.2rem);
+    font-weight: 500;
+    line-height: .84;
+    letter-spacing: -.09em;
     color: var(--white);
-    max-width: 10.6ch;
+    max-width: 11ch;
+    text-wrap: balance;
+    text-shadow: 0 6px 24px rgba(19,12,5,.18);
     margin-bottom: 0;
 }
 
@@ -687,45 +685,25 @@ html.menu-open body {
 .aries-landing-hero__footer {
     width: 100%;
     max-width: 100%;
-    display: grid;
-    grid-template-columns: minmax(0, 36rem) auto;
+    display: flex;
     align-items: end;
     justify-content: space-between;
     gap: 1.5rem 2rem;
 }
 
 .aries-landing-hero__description {
-    font-size: 1.03rem;
-    line-height: 1.75;
-    color: rgba(255,255,255,.82);
-    max-width: 34rem;
+    font-size: 1.02rem;
+    line-height: 1.62;
+    color: rgba(255,255,255,.92);
+    max-width: 30rem;
+    text-shadow: 0 4px 16px rgba(19,12,5,.18);
 }
 
 .aries-landing-hero__support {
     display: flex;
     flex-direction: column;
-    gap: 1.1rem;
-}
-
-.aries-landing-hero__support-items {
-    display: flex;
-    gap: .85rem;
-    flex-wrap: wrap;
-}
-
-.aries-landing-hero__support-items span {
-    display: inline-flex;
-    align-items: center;
-    min-height: 2.45rem;
-    padding: 0 .95rem;
-    border-radius: 999px;
-    border: 1px solid rgba(255,255,255,.16);
-    background: rgba(255,255,255,.06);
-    color: rgba(255,255,255,.82);
-    font-size: .76rem;
-    font-weight: 700;
-    letter-spacing: .08em;
-    text-transform: uppercase;
+    justify-content: flex-end;
+    min-height: 4.5rem;
 }
 
 .aries-hero-cta {
@@ -735,6 +713,7 @@ html.menu-open body {
     display: inline-flex;
     align-items: center;
     gap: .65rem;
+    flex-shrink: 0;
 }
 
 .aries-hero-cta__label,
@@ -743,24 +722,25 @@ html.menu-open body {
     align-items: center;
     justify-content: center;
     background: var(--gold);
-    color: var(--navy);
+    color: var(--white);
     transition: transform var(--t1), background var(--t1), box-shadow var(--t1);
 }
 
 .aries-hero-cta__label {
-    min-height: 4.5rem;
-    padding: 0 1.65rem;
+    min-height: 4.4rem;
+    padding: 0 1.75rem;
     border-radius: 999px;
-    font-size: .96rem;
+    font-size: .98rem;
     font-weight: 700;
     letter-spacing: -.02em;
+    box-shadow: 0 14px 34px rgba(238,153,40,.2);
 }
 
 .aries-hero-cta__icon {
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 4.4rem;
+    height: 4.4rem;
     border-radius: 999px;
-    box-shadow: 0 12px 32px rgba(238,153,40,.25);
+    box-shadow: 0 14px 34px rgba(238,153,40,.2);
 }
 
 .aries-hero-cta__icon svg {
@@ -2865,11 +2845,12 @@ html.menu-open body {
     }
 
     .aries-landing-hero__footer {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .aries-hero-cta {
-        justify-self: start;
+        margin-left: 0;
     }
 
     .aries-check-list {
@@ -2890,6 +2871,7 @@ html.menu-open body {
     .aries-landing-hero__title {
         font-size: clamp(3.25rem, 14vw, 5rem);
         max-width: none;
+        line-height: .9;
     }
 
     .aries-landing-hero__title-line--nowrap {
@@ -2949,10 +2931,6 @@ html.menu-open body {
     .mobile-nav__panel {
         padding: .8rem;
         border-radius: 1.4rem;
-    }
-
-    .aries-landing-hero__support-items {
-        gap: .6rem;
     }
 
     .footer-top__title {

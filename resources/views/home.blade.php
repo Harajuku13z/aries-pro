@@ -64,8 +64,8 @@
 <section class="h-hero aries-landing-hero" id="accueil" aria-label="Accueil ARIES">
     <div class="h-hero__media">
         <img
-            src="{{ asset('images/lion-ambition.jpg') }}"
-            alt="Lion symbolisant la vision et l'ambition d'ARIES Investissements"
+            src="{{ asset('images/team-meeting.jpg') }}"
+            alt="Échange entre décideurs illustrant l'accompagnement stratégique d'ARIES Investissements"
             loading="eager"
         >
         <div class="h-hero__overlay"></div>
@@ -75,8 +75,6 @@
         <div class="aries-landing-hero__inner">
             <div class="aries-landing-hero__content">
                 <div class="aries-landing-hero__headline">
-                    <p class="h-kicker reveal">ARIES Investissements</p>
-
                     <h1 class="h-hero__title aries-landing-hero__title reveal" data-delay="80" data-split="false">
                         <span class="aries-landing-hero__title-line">Accélérer</span>
                         <span class="aries-landing-hero__title-line aries-landing-hero__title-line--nowrap">la croissance</span>
@@ -90,11 +88,6 @@
                             Nous accompagnons investisseurs, institutions et dirigeants dans la structuration,
                             le financement et l'exécution de projets ambitieux en Afrique centrale.
                         </p>
-                        <div class="aries-landing-hero__support-items">
-                            <span>Brazzaville</span>
-                            <span>Structuration</span>
-                            <span>Levée de fonds</span>
-                        </div>
                     </div>
 
                     <a href="{{ route('presentation') }}" class="aries-hero-cta reveal" data-delay="240">

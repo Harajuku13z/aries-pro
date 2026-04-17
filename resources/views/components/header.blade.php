@@ -27,7 +27,7 @@
                     <span class="header-meta__label">Washington</span>
                 </div>
 
-                <a href="{{ route('contact') }}" class="hidden lg:inline-flex btn-outline text-xs py-2.5 px-5">
+                <a href="{{ route('contact') }}" class="hidden lg:inline-flex header-cta header-cta--ghost">
                     Nous contacter
                 </a>
 
@@ -70,7 +70,7 @@
 
         <div class="mobile-menu__meta">
             <p class="mobile-menu__locations">Brazzaville · Washington</p>
-            <a href="{{ route('contact') }}" class="btn-primary text-sm">Nous contacter</a>
+            <a href="{{ route('contact') }}" class="header-cta header-cta--solid">Nous contacter</a>
             <a href="mailto:aries@aries-investissements.com" class="mobile-menu__mail">aries@aries-investissements.com</a>
         </div>
     </div>

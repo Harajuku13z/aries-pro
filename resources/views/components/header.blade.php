@@ -6,7 +6,7 @@
                 <img
                     src="{{ asset('images/logo-aries.png') }}"
                     alt="ARIES Investissements"
-                    class="brand-logo brand-logo--inverse"
+                    class="brand-logo"
                     loading="eager"
                 >
             </a>

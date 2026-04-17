@@ -81,7 +81,7 @@ a {
     position: fixed;
     inset: 0 0 auto;
     z-index: 100;
-    padding: 0.95rem 0;
+    padding: 1rem 0;
     transition: padding var(--motion-base) var(--ease-enter);
 }
 
@@ -94,13 +94,13 @@ a {
     align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
-    min-height: 5rem;
-    padding: 0.95rem 1.3rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 1.65rem;
-    background: rgba(14, 17, 24, 0.92);
-    box-shadow: 0 18px 48px rgba(7, 10, 16, 0.18);
-    backdrop-filter: blur(14px);
+    min-height: 4.45rem;
+    padding: 0.82rem 1.15rem;
+    border: 1px solid rgba(16, 23, 34, 0.06);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 10px 30px rgba(10, 15, 22, 0.08);
+    backdrop-filter: blur(16px);
     transition:
         background var(--motion-base) var(--ease-enter),
         border-color var(--motion-base) var(--ease-enter),
@@ -109,13 +109,13 @@ a {
 }
 
 .site-header.scrolled {
-    padding: 0.55rem 0;
+    padding: 0.7rem 0;
 }
 
 .site-header.scrolled .header-shell {
-    background: rgba(12, 14, 20, 0.98);
-    border-color: rgba(255, 255, 255, 0.12);
-    box-shadow: 0 18px 52px rgba(7, 10, 16, 0.24);
+    background: rgba(255, 255, 255, 0.98);
+    border-color: rgba(16, 23, 34, 0.08);
+    box-shadow: 0 14px 32px rgba(10, 15, 22, 0.1);
 }
 
 .brand-link {
@@ -154,7 +154,7 @@ a {
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.54);
+    color: rgba(16, 23, 34, 0.48);
 }
 
 .header-meta__separator {
@@ -184,15 +184,15 @@ a {
 }
 
 .header-cta--ghost {
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid #101722;
+    background: #101722;
     color: #fff;
 }
 
 .header-cta--ghost:hover {
     transform: translateY(-1px);
-    border-color: rgba(255, 255, 255, 0.32);
-    background: rgba(255, 255, 255, 0.08);
+    border-color: #101722;
+    background: #1b2230;
 }
 
 .header-cta--solid {
@@ -210,10 +210,11 @@ a {
 
 .header-nav a {
     position: relative;
-    font-size: 0.92rem;
-    font-weight: 600;
+    font-size: 0.78rem;
+    font-weight: 700;
     letter-spacing: -0.01em;
-    color: rgba(255, 255, 255, 0.76);
+    color: rgba(16, 23, 34, 0.78);
+    text-transform: none;
     transition: color var(--motion-fast) var(--ease-enter);
 }
 
@@ -232,7 +233,7 @@ a {
 
 .header-nav a:hover,
 .header-nav a.active {
-    color: #fff;
+    color: #101722;
 }
 
 .header-nav a:hover::after,
@@ -248,10 +249,10 @@ a {
     width: 3rem;
     height: 3rem;
     padding: 0;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(16, 23, 34, 0.12);
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.06);
-    color: #fff;
+    background: #fff;
+    color: #101722;
     cursor: pointer;
     transition:
         border-color var(--motion-fast) var(--ease-enter),
@@ -260,8 +261,8 @@ a {
 }
 
 .header-toggle:hover {
-    border-color: rgba(255, 255, 255, 0.28);
-    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(16, 23, 34, 0.24);
+    background: rgba(16, 23, 34, 0.03);
     transform: scale(0.98);
 }
 
@@ -280,63 +281,84 @@ a {
 
 .aries-home-hero {
     position: relative;
-    padding: calc(var(--header-height) + 4.5rem) 0 3rem;
+    padding: calc(var(--header-height) + 2rem) 0 0;
+    background: #050505;
     overflow: hidden;
 }
 
-.aries-home-hero::before {
-    content: '';
-    position: absolute;
-    inset: 0 0 auto;
-    height: 28rem;
-    background:
-        radial-gradient(circle at 82% 16%, rgba(173, 92, 255, 0.14), transparent 25%),
-        radial-gradient(circle at 12% 18%, rgba(239, 66, 56, 0.08), transparent 22%);
-    pointer-events: none;
-}
-
-.aries-home-hero__inner {
+.aries-home-hero__panel {
     position: relative;
+    min-height: 48rem;
+    padding: 9rem 0 3rem;
 }
 
 .aries-home-hero__copy {
     position: relative;
     z-index: 2;
-    max-width: 60rem;
+    max-width: 45rem;
+}
+
+.aries-home-hero__image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: min(52rem, 58vw);
+    height: 19rem;
+    overflow: hidden;
+    border-radius: 1.2rem 1.2rem 0 0;
+    opacity: 0.2;
+}
+
+.aries-home-hero__image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(5, 5, 5, 0.72), rgba(5, 5, 5, 0.92));
+}
+
+.aries-home-hero__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
 }
 
 .aries-kicker {
     margin-bottom: 1rem;
-    font-size: 0.74rem;
+    font-size: 0.72rem;
     font-weight: 800;
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--brand-accent);
 }
 
+.aries-kicker--hero,
 .aries-kicker--light {
-    color: rgba(255, 255, 255, 0.62);
+    color: rgba(255, 255, 255, 0.68);
 }
 
 .aries-home-hero__title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1em;
     font-family: var(--font-display);
-    font-size: clamp(3.9rem, 9vw, 8rem);
+    font-size: clamp(4.25rem, 10vw, 7rem);
     font-weight: 700;
-    line-height: 0.9;
-    letter-spacing: -0.07em;
-    color: var(--ink-strong);
-    max-width: 10ch;
+    line-height: 0.88;
+    letter-spacing: -0.08em;
+    color: #fff;
+    max-width: 8ch;
 }
 
-.aries-home-hero__accent {
+.aries-home-hero__title-line {
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.65rem;
 }
 
 .aries-home-hero__squiggle {
     display: inline-flex;
-    width: clamp(4.8rem, 8vw, 7rem);
+    width: clamp(4.2rem, 7vw, 6.1rem);
     color: var(--brand-accent);
     flex-shrink: 0;
 }
@@ -347,103 +369,67 @@ a {
 }
 
 .aries-home-hero__support {
-    display: grid;
-    grid-template-columns: minmax(0, 28rem) auto;
-    gap: 1.5rem 3rem;
-    align-items: start;
-    margin-top: 2.4rem;
-    max-width: 54rem;
-}
-
-.aries-home-hero__prose {
-    color: var(--ink-muted);
-    font-size: clamp(1rem, 1.4vw, 1.16rem);
-    line-height: 1.78;
-}
-
-.aries-home-hero__media {
-    position: relative;
-    z-index: 2;
-    margin-top: 3.2rem;
-    overflow: hidden;
-    border-radius: 2.2rem;
-    aspect-ratio: 16 / 7.7;
-    background: #d9dde3;
-    box-shadow: 0 24px 60px rgba(16, 23, 34, 0.12);
-}
-
-.aries-home-hero__media::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(16, 23, 34, 0.02), rgba(16, 23, 34, 0.18));
-}
-
-.aries-home-hero__media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.aries-home-hero__outline {
-    position: absolute;
-    right: -4rem;
-    bottom: 4.5rem;
-    width: min(25vw, 17rem);
-    color: var(--decor-accent);
-    opacity: 0.9;
-    pointer-events: none;
-}
-
-.aries-home-section {
-    padding: 7rem 0;
-}
-
-.aries-home-section--soft {
-    background: var(--surface-soft);
-}
-
-.aries-home-section--alt {
-    background: #ffffff;
-}
-
-.aries-home-section--news {
-    background: #fbfaf7;
-}
-
-.aries-section-heading {
     display: flex;
     align-items: end;
     justify-content: space-between;
     gap: 2rem;
-    margin-bottom: 2.8rem;
+    margin-top: 1.8rem;
+}
+
+.aries-home-hero__prose {
+    max-width: 22rem;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.aries-home-section {
+    padding: 5.5rem 0;
+    background: #ffffff;
+}
+
+.aries-section-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 2.4rem;
+}
+
+.aries-section-heading--center {
+    align-items: center;
+    text-align: center;
 }
 
 .aries-display {
     font-family: var(--font-display);
-    font-size: clamp(2.5rem, 4.8vw, 4.8rem);
+    font-size: clamp(2.4rem, 5vw, 4rem);
     font-weight: 700;
     line-height: 0.98;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.06em;
     color: var(--ink-strong);
     max-width: 13ch;
 }
 
+.aries-display--narrow {
+    max-width: 10ch;
+}
+
 .aries-display--light {
     color: #fff;
+    max-width: 11ch;
 }
 
 .aries-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.72rem;
-    min-height: 3.45rem;
-    padding: 0.92rem 1.35rem;
+    gap: 0.62rem;
+    min-height: 2.5rem;
+    padding: 0.72rem 1rem;
     border-radius: 999px;
-    font-size: 0.78rem;
+    font-size: 0.62rem;
     font-weight: 800;
-    letter-spacing: 0.13em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     transition:
         transform var(--motion-fast) var(--ease-spring),
@@ -454,14 +440,13 @@ a {
 }
 
 .aries-btn:hover {
-    transform: translateY(-1px) scale(0.99);
+    transform: translateY(-1px);
 }
 
 .aries-btn--primary {
     border: 1px solid var(--brand-accent);
     background: var(--brand-accent);
     color: #fff;
-    box-shadow: 0 18px 34px rgba(239, 66, 56, 0.18);
 }
 
 .aries-btn--primary:hover {
@@ -469,21 +454,20 @@ a {
     background: var(--brand-accent-dark);
 }
 
-.aries-btn--secondary {
-    border: 1px solid rgba(16, 23, 34, 0.14);
-    background: rgba(255, 255, 255, 0.72);
-    color: var(--ink-strong);
+.aries-btn--dark {
+    border: 1px solid #111;
+    background: #111;
+    color: #fff;
 }
 
-.aries-btn--secondary:hover {
-    border-color: rgba(16, 23, 34, 0.24);
-    background: rgba(255, 255, 255, 0.96);
+.aries-btn--dark:hover {
+    background: #000;
 }
 
 .aries-btn__icon {
     display: inline-flex;
-    width: 0.8rem;
-    height: 0.8rem;
+    width: 0.74rem;
+    height: 0.74rem;
 }
 
 .aries-btn__icon svg {
@@ -494,25 +478,25 @@ a {
 .aries-card-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem;
+    gap: 0.35rem;
 }
 
 .aries-service-card {
     position: relative;
     display: block;
     overflow: hidden;
-    min-height: 33rem;
-    border-radius: 2rem;
+    min-height: 22rem;
+    border-radius: 0.3rem;
+    background: #050505;
     color: #fff;
-    box-shadow: 0 16px 42px rgba(16, 23, 34, 0.08);
     transition:
         transform var(--motion-base) var(--ease-spring),
         box-shadow var(--motion-base) var(--ease-enter);
 }
 
 .aries-service-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 24px 54px rgba(16, 23, 34, 0.14);
+    transform: translateY(-4px);
+    box-shadow: 0 18px 36px rgba(16, 23, 34, 0.12);
 }
 
 .aries-service-card__media {
@@ -524,13 +508,15 @@ a {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(10, 15, 22, 0.08) 12%, rgba(10, 15, 22, 0.88) 100%);
+    background: linear-gradient(180deg, rgba(5, 5, 5, 0.45), rgba(5, 5, 5, 0.88));
 }
 
 .aries-service-card__media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: grayscale(100%);
+    opacity: 0.55;
 }
 
 .aries-service-card__body {
@@ -539,92 +525,49 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 33rem;
-    padding: 1.7rem;
+    min-height: 22rem;
+    padding: 1.1rem;
 }
 
-.aries-service-card__top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 1rem;
-}
-
-.aries-service-card__icon {
-    width: 4rem;
-    color: var(--brand-accent);
-}
-
-.aries-service-card__icon svg {
-    width: 100%;
-    height: auto;
-}
-
-.aries-service-card__arrow {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    backdrop-filter: blur(8px);
-}
-
-.aries-service-card__arrow svg {
-    width: 0.85rem;
-    height: 0.85rem;
-}
-
-.aries-service-card__content h3 {
-    margin-bottom: 0.7rem;
+.aries-service-card__body h3 {
     font-family: var(--font-display);
-    font-size: clamp(2rem, 3vw, 2.5rem);
-    font-weight: 700;
-    line-height: 0.98;
-    letter-spacing: -0.05em;
+    font-size: 1.65rem;
+    font-weight: 500;
+    line-height: 1;
 }
 
-.aries-service-card__content p {
-    max-width: 19ch;
-    color: rgba(255, 255, 255, 0.76);
-    line-height: 1.7;
+.aries-service-card__body p {
+    max-width: 18ch;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    line-height: 1.55;
 }
 
 .aries-media {
     display: grid;
-    grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.9fr);
-    gap: 2.4rem 4.5rem;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: 2rem 3rem;
     align-items: center;
 }
 
 .aries-media--left {
-    grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.02fr);
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
 }
 
 .aries-media--left .aries-media__visual {
-    order: 2;
+    order: 1;
 }
 
 .aries-media--left .aries-media__content {
-    order: 1;
+    order: 2;
 }
 
 .aries-media__frame {
     position: relative;
     overflow: hidden;
-    border-radius: 2rem;
-    aspect-ratio: 4 / 3;
+    border-radius: 0.35rem;
+    aspect-ratio: 1.28 / 1;
     background: #d9dde3;
-    box-shadow: 0 20px 48px rgba(16, 23, 34, 0.1);
-}
-
-.aries-media__frame::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(16, 23, 34, 0.02), rgba(16, 23, 34, 0.16));
 }
 
 .aries-media__frame img {
@@ -634,151 +577,153 @@ a {
 }
 
 .aries-media__content {
-    max-width: 34rem;
-}
-
-.aries-media__content .aries-display {
-    margin-bottom: 1.2rem;
+    max-width: 31rem;
 }
 
 .aries-prose {
     display: grid;
     gap: 1rem;
-    margin-bottom: 2rem;
+    margin: 1rem 0 1.5rem;
     color: var(--ink-muted);
-    line-height: 1.76;
+    line-height: 1.7;
 }
 
-.aries-insight-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.25rem;
-}
-
-.aries-insight-card {
-    padding: 2rem;
-    border: 1px solid var(--line-soft);
-    border-radius: 1.8rem;
-    background: var(--surface-card);
-    box-shadow: 0 16px 36px rgba(16, 23, 34, 0.04);
-}
-
-.aries-insight-card__meta {
+.aries-strip-heading {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
-    font-size: 0.74rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink-subtle);
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 1.4rem;
 }
 
-.aries-insight-card__tag {
-    color: var(--brand-accent);
-}
-
-.aries-insight-card h3 {
-    margin-bottom: 0.8rem;
+.aries-section-inline-title {
     font-family: var(--font-display);
-    font-size: 1.7rem;
-    font-weight: 700;
-    line-height: 1.03;
-    letter-spacing: -0.04em;
-    color: var(--ink-strong);
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 600;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    color: #101722;
 }
 
-.aries-insight-card p {
-    color: var(--ink-muted);
-    line-height: 1.72;
-}
-
-.aries-text-link {
+.aries-mini-link {
     display: inline-flex;
     align-items: center;
     gap: 0.55rem;
-    margin-top: 1.5rem;
-    font-size: 0.82rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--ink-strong);
-}
-
-.aries-text-link svg {
-    width: 0.8rem;
-    height: 0.8rem;
-}
-
-.aries-home-cta {
-    padding: 0 0 7rem;
-    background: #fbfaf7;
-}
-
-.aries-home-cta__panel {
-    position: relative;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 2rem 4rem;
-    padding: 3rem;
-    overflow: hidden;
-    border-radius: 2.2rem;
-    background: #10141c;
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    background: #111;
     color: #fff;
-    box-shadow: 0 24px 60px rgba(16, 23, 34, 0.18);
-}
-
-.aries-home-cta__panel::before {
-    content: '';
-    position: absolute;
-    top: -7rem;
-    right: -4rem;
-    width: 18rem;
-    height: 18rem;
-    border-radius: 999px;
-    background: rgba(173, 92, 255, 0.22);
-    filter: blur(34px);
-}
-
-.aries-home-cta__copy,
-.aries-home-cta__actions {
-    position: relative;
-    z-index: 1;
-}
-
-.aries-home-cta__copy p:last-child {
-    margin-top: 1.2rem;
-    max-width: 35rem;
-    color: rgba(255, 255, 255, 0.72);
-    line-height: 1.78;
-}
-
-.aries-home-cta__actions {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 1rem;
-}
-
-.aries-location-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-}
-
-.aries-location-pill {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.6rem 0.9rem;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.06);
-    font-size: 0.74rem;
+    font-size: 0.62rem;
     font-weight: 800;
     letter-spacing: 0.12em;
     text-transform: uppercase;
+}
+
+.aries-compact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.aries-compact-card {
+    display: block;
+    overflow: hidden;
+    border-radius: 0.45rem;
+    background: #fff;
+    color: inherit;
+}
+
+.aries-compact-card__media {
+    aspect-ratio: 1.4 / 1;
+    overflow: hidden;
+    background: #d9dde3;
+}
+
+.aries-compact-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.aries-compact-card__body {
+    padding: 0.8rem 0.1rem 0;
+}
+
+.aries-compact-card__tag {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0.55rem;
+    padding: 0.2rem 0.45rem;
+    border: 1px solid rgba(239, 66, 56, 0.25);
+    border-radius: 999px;
+    color: var(--brand-accent);
+    font-size: 0.56rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.aries-compact-card h3 {
+    margin-bottom: 0.45rem;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.28;
+    color: #101722;
+}
+
+.aries-compact-card p {
+    color: #5f6673;
+    font-size: 0.84rem;
+    line-height: 1.55;
+}
+
+.aries-compact-card__meta {
+    display: inline-block;
+    margin-top: 0.7rem;
+    color: #8f96a3;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.aries-home-cta {
+    padding: 1.5rem 0 6rem;
+    background: #fff;
+}
+
+.aries-home-cta__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 0.5rem;
+    align-items: stretch;
+}
+
+.aries-home-cta__image {
+    overflow: hidden;
+    border-radius: 0.45rem;
+    min-height: 20rem;
+}
+
+.aries-home-cta__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.aries-home-cta__panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.1rem;
+    padding: 2.4rem;
+    border-radius: 0.45rem;
+    background: var(--brand-accent);
+    color: #fff;
+}
+
+.aries-home-cta__panel p:last-of-type {
+    max-width: 30rem;
+    color: rgba(255, 255, 255, 0.86);
+    line-height: 1.7;
 }
 
 .hero-section {
@@ -1595,7 +1540,7 @@ a {
 
 @media (max-width: 1279px) {
     .header-shell {
-        border-radius: 1.6rem;
+        border-radius: 1.4rem;
     }
 }
 
@@ -1604,27 +1549,31 @@ a {
         --header-height: 5.35rem;
     }
 
+    .aries-home-hero__panel {
+        min-height: 42rem;
+        padding-top: 8rem;
+    }
+
+    .aries-home-hero__image {
+        width: min(38rem, 62vw);
+        height: 15rem;
+    }
+
     .aries-home-hero__support,
     .aries-media,
     .aries-media--left,
-    .aries-home-cta__panel {
+    .aries-home-cta__grid {
         grid-template-columns: 1fr;
     }
 
     .aries-card-grid,
-    .aries-insight-grid {
+    .aries-compact-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .hero-layout {
-        grid-template-columns: 1fr;
-        gap: 1.6rem;
-    }
-
-    .aries-home-hero__outline {
-        right: -2rem;
-        bottom: 7rem;
-        width: 11rem;
+    .aries-home-hero__support {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .aries-media,
@@ -1635,20 +1584,6 @@ a {
     .aries-media--left .aries-media__visual,
     .aries-media--left .aries-media__content {
         order: initial;
-    }
-
-    .hero-copy {
-        max-width: 100%;
-    }
-
-    .hero-panel {
-        width: 100%;
-        margin-left: 0;
-    }
-
-    .hero-stat-strip,
-    .info-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -1668,40 +1603,51 @@ a {
     }
 
     .aries-home-hero {
-        padding-top: calc(var(--header-height) + 3.3rem);
-        padding-bottom: 2rem;
+        padding-top: calc(var(--header-height) + 1.9rem);
+    }
+
+    .aries-home-hero__panel {
+        min-height: auto;
+        padding: 6.5rem 0 1.8rem;
     }
 
     .aries-home-hero__title {
         max-width: 100%;
-        font-size: clamp(3.1rem, 15vw, 4.9rem);
+        font-size: clamp(3.2rem, 15vw, 4.8rem);
     }
 
-    .aries-home-hero__accent {
-        gap: 0.45rem;
-    }
-
-    .aries-home-hero__support,
     .aries-card-grid,
-    .aries-insight-grid,
-    .hero-layout,
-    .hero-stat-strip,
-    .info-grid {
+    .aries-compact-grid,
+    .aries-home-cta__grid {
         grid-template-columns: 1fr;
     }
 
     .aries-home-section {
-        padding: 5rem 0;
+        padding: 4.2rem 0;
     }
 
-    .aries-home-hero__media {
-        margin-top: 2.2rem;
-        border-radius: 1.5rem;
-        aspect-ratio: 4 / 5;
+    .aries-home-hero__title-line {
+        gap: 0.4rem;
     }
 
-    .aries-home-hero__outline {
-        display: none;
+    .aries-home-hero__squiggle {
+        width: 3.5rem;
+    }
+
+    .aries-home-hero__support,
+    .aries-strip-heading,
+    .aries-section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .aries-home-hero__image {
+        position: relative;
+        width: 100%;
+        height: 13rem;
+        margin-top: 1.75rem;
+        border-radius: 0.35rem;
+        opacity: 0.28;
     }
 
     .aries-display {
@@ -1709,29 +1655,25 @@ a {
         max-width: 100%;
     }
 
-    .aries-section-heading {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 2.2rem;
-    }
-
     .aries-service-card,
     .aries-service-card__body {
-        min-height: 28rem;
+        min-height: 16rem;
     }
 
     .aries-media__frame,
+    .aries-home-cta__image,
     .aries-home-cta__panel {
-        border-radius: 1.6rem;
+        border-radius: 0.35rem;
     }
 
-    .aries-btn {
+    .aries-btn,
+    .header-cta {
         width: 100%;
         justify-content: space-between;
     }
 
     .aries-home-cta {
-        padding-bottom: 5rem;
+        padding: 1rem 0 4.5rem;
     }
 
     .header-cta {

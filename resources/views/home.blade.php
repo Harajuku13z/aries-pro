@@ -117,8 +117,8 @@
 <section class="aries-home-hero" aria-label="Introduction">
     <div class="aries-home-hero__media">
         <img
-            src="{{ asset('images/team-photo.jpg') }}"
-            alt="Équipe ARIES Investissements illustrant la croissance et l’accompagnement"
+            src="{{ asset('images/lion-ambition.jpg') }}"
+            alt="Lion symbolisant l’ambition et la puissance d’exécution d’ARIES"
             loading="eager"
         >
         <div class="aries-home-hero__overlay"></div>
@@ -126,6 +126,8 @@
 
     <div class="aries-home-hero__panel">
         <div class="aries-home-hero__copy">
+            <p class="aries-kicker aries-kicker--hero reveal">ARIES Investissements</p>
+
             <h1 class="aries-home-hero__title reveal reveal-delay-1">
                 Accélérer
                 <span class="aries-home-hero__title-line">
@@ -144,7 +146,7 @@
             <div class="aries-home-hero__support">
                 <div class="aries-home-hero__prose reveal reveal-delay-2">
                     <p>
-                        Nous aidons investisseurs, institutions et porteurs de projets à s’implanter, structurer et accélérer leurs opérations en Afrique centrale, plus vite, plus clairement et sans friction inutile.
+                        Nous aidons investisseurs, institutions et porteurs de projets à structurer, financer et accélérer leurs opérations en Afrique centrale avec plus de clarté, de discipline et d’impact.
                     </p>
                 </div>
 

@@ -11,7 +11,7 @@
                 >
             </a>
 
-            <nav class="header-nav hidden xl:flex items-center gap-7" aria-label="Navigation principale">
+            <nav class="header-nav hidden lg:flex items-center gap-7" aria-label="Navigation principale">
                 <a href="{{ route('home') }}" @class(['active' => request()->routeIs('home')])>Accueil</a>
                 <a href="{{ route('presentation') }}" @class(['active' => request()->routeIs('presentation')])>Présentation</a>
                 <a href="{{ route('expertise') }}" @class(['active' => request()->routeIs('expertise')])>Expertise</a>
@@ -25,7 +25,7 @@
                     Nous contacter
                 </a>
 
-                <button id="menu-toggle" class="header-toggle xl:hidden" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+                <button id="menu-toggle" class="header-toggle lg:hidden" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
                     <span class="header-toggle__line"></span>
                     <span class="header-toggle__line header-toggle__line--short"></span>
                     <span class="header-toggle__line"></span>

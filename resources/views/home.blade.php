@@ -147,7 +147,7 @@
 
 <section class="aries-home-section aries-split-section" aria-label="Votre avantage terrain">
     <div class="h-container">
-        <div class="aries-split">
+        <div class="aries-split aries-split--match-height">
             <div class="aries-split__media reveal-left">
                 <img src="{{ asset('images/about-africa.jpg') }}" alt="Vue urbaine illustrant le marché africain accompagné par ARIES" loading="lazy">
             </div>

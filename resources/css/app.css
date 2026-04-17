@@ -699,6 +699,10 @@ button, input, textarea, select { font: inherit; }
     align-items: center;
 }
 
+.aries-split--match-height {
+    align-items: stretch;
+}
+
 .aries-split--reverse .aries-split__media {
     order: 2;
 }
@@ -712,6 +716,11 @@ button, input, textarea, select { font: inherit; }
     border-radius: 2rem;
     aspect-ratio: 5 / 4;
     box-shadow: 0 28px 60px rgba(19,12,5,.12);
+}
+
+.aries-split--match-height .aries-split__media {
+    aspect-ratio: auto;
+    min-height: 100%;
 }
 
 .aries-split__media img {

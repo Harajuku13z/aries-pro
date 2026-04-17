@@ -74,13 +74,15 @@
     <div class="aries-landing-hero__shell">
         <div class="aries-landing-hero__inner">
             <div class="aries-landing-hero__content">
-                <p class="h-kicker reveal">ARIES Investissements</p>
+                <div class="aries-landing-hero__headline">
+                    <p class="h-kicker reveal">ARIES Investissements</p>
 
-                <h1 class="h-hero__title aries-landing-hero__title reveal" data-delay="80" data-split="false">
-                    <span class="aries-landing-hero__title-line">Accélérer</span>
-                    <span class="aries-landing-hero__title-line aries-landing-hero__title-line--nowrap">la croissance</span>
-                    <span class="aries-landing-hero__title-line">en Afrique</span>
-                </h1>
+                    <h1 class="h-hero__title aries-landing-hero__title reveal" data-delay="80" data-split="false">
+                        <span class="aries-landing-hero__title-line">Accélérer</span>
+                        <span class="aries-landing-hero__title-line aries-landing-hero__title-line--nowrap">la croissance</span>
+                        <span class="aries-landing-hero__title-line">en Afrique</span>
+                    </h1>
+                </div>
 
                 <div class="aries-landing-hero__footer">
                     <div class="aries-landing-hero__support reveal" data-delay="160">

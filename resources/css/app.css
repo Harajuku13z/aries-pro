@@ -468,6 +468,17 @@ button, input, textarea, select { font: inherit; }
 }
 
 .aries-landing-hero__content {
+    width: 100%;
+    min-height: calc(100svh - (calc(6.5rem + 4vw)) - 2rem);
+    display: grid;
+    grid-template-rows: 1fr auto;
+    align-items: stretch;
+}
+
+.aries-landing-hero__headline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     max-width: 66rem;
 }
 
@@ -497,13 +508,13 @@ button, input, textarea, select { font: inherit; }
 }
 
 .aries-landing-hero__footer {
-    width: min(100%, 78rem);
+    width: 100%;
+    max-width: 100%;
     display: grid;
     grid-template-columns: minmax(0, 36rem) auto;
     align-items: end;
     justify-content: space-between;
     gap: 1.5rem 2rem;
-    margin-top: 2.75rem;
 }
 
 .aries-landing-hero__description {
@@ -541,7 +552,9 @@ button, input, textarea, select { font: inherit; }
 }
 
 .aries-hero-cta {
+    margin-left: auto;
     justify-self: end;
+    align-self: end;
     display: inline-flex;
     align-items: center;
     gap: .65rem;

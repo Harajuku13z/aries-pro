@@ -10,7 +10,7 @@
 ═══════════════════════════════════════════ --}}
 <section class="h-hero" id="accueil" aria-label="Accueil">
     <div class="h-hero__media">
-        <img src="{{ asset('images/hero-main.jpg') }}" alt="Afrique — investissement et développement" loading="eager">
+        <img src="{{ asset('images/lion-ambition.jpg') }}" alt="Le lion — symbole de puissance et d'ambition d'ARIES" loading="eager" data-parallax="0.15">
         <div class="h-hero__overlay"></div>
     </div>
 
@@ -259,7 +259,7 @@
 
                     @foreach($pillars as $p)
                     <div class="h-pillar">
-                        <span class="h-pillar__icon" aria-hidden="true">{{ $p['icon'] }}</span>
+                        <span class="h-pillar__dot" aria-hidden="true"></span>
                         <div>
                             <strong>{{ $p['title'] }}</strong>
                             <p>{{ $p['desc'] }}</p>
@@ -323,8 +323,8 @@
         <div class="h-team">
             @php
             $members = [
-                ['name' => 'Loïc Mackosso', 'role' => 'Fondateur & Directeur Général', 'bio' => 'Expert en structuration financière et développement stratégique en Afrique centrale. Fort d\'un parcours international alliant finance et conseil.', 'photo' => 'team-photo.jpg'],
-                ['name' => 'Régis Matondo', 'role' => 'Directeur des Investissements', 'bio' => 'Spécialiste de la levée de fonds et de l\'intelligence économique. Accompagne les projets d\'infrastructures et d\'agrobusiness depuis plus de 10 ans.', 'photo' => 'team-photo.jpg'],
+                ['name' => 'Loïc Mackosso', 'role' => 'Fondateur & Directeur Général', 'bio' => 'Expert en structuration financière et développement stratégique en Afrique centrale. Fort d\'un parcours international alliant finance et conseil.', 'photo' => 'team-loic.jpg'],
+                ['name' => 'Régis Matondo', 'role' => 'Directeur des Investissements', 'bio' => 'Spécialiste de la levée de fonds et de l\'intelligence économique. Accompagne les projets d\'infrastructures et d\'agrobusiness depuis plus de 10 ans.', 'photo' => 'team-regis.jpg'],
                 ['name' => 'Expert Associé', 'role' => 'Conseil & Relations institutionnelles', 'bio' => 'Réseau institutionnel panafricain, expertise en partenariats public-privé et structuration de projets à impact.', 'photo' => 'team-member3.jpg'],
             ];
             @endphp

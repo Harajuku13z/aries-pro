@@ -17,9 +17,6 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
-    <script>
-        document.documentElement.classList.add('js');
-    </script>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('head')

@@ -1,11 +1,12 @@
-document.documentElement.classList.add('js');
-
 document.addEventListener('DOMContentLoaded', () => {
+    const root = document.documentElement;
     const header = document.querySelector('.site-header');
     const menuToggle = document.getElementById('menu-toggle');
     const menuClose = document.getElementById('menu-close');
     const mobileMenu = document.getElementById('mobile-menu');
-    const heroVisual = document.querySelector('.hero-visual');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    root.classList.add('has-motion');
 
     if (header) {
         const onScroll = () => {
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.classList.toggle('open', isOpen);
         mobileMenu.setAttribute('aria-hidden', String(!isOpen));
         document.body.style.overflow = isOpen ? 'hidden' : '';
+        document.body.classList.toggle('menu-open', isOpen);
 
         if (menuToggle) {
             menuToggle.setAttribute('aria-expanded', String(isOpen));
@@ -65,13 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
         revealEls.forEach((element) => observer.observe(element));
     } else {
         revealEls.forEach((element) => element.classList.add('visible'));
-    }
-
-    if (heroVisual) {
-        window.addEventListener('scroll', () => {
-            const offset = window.scrollY * 0.2;
-            heroVisual.style.transform = `translateY(${offset}px)`;
-        }, { passive: true });
     }
 
     const currentPath = window.location.pathname;
@@ -126,4 +121,15 @@ document.addEventListener('DOMContentLoaded', () => {
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
+
+    const syncMotionPreference = () => {
+        root.classList.toggle('reduced-motion', prefersReducedMotion.matches);
+    };
+
+    syncMotionPreference();
+    if (typeof prefersReducedMotion.addEventListener === 'function') {
+        prefersReducedMotion.addEventListener('change', syncMotionPreference);
+    } else if (typeof prefersReducedMotion.addListener === 'function') {
+        prefersReducedMotion.addListener(syncMotionPreference);
+    }
 });

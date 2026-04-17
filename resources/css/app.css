@@ -93,9 +93,9 @@ a {
 }
 
 .header-shell {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
-    justify-content: space-between;
     gap: 1.5rem;
     width: 100%;
     min-height: 4.45rem;
@@ -144,7 +144,7 @@ a {
     display: flex;
     align-items: center;
     gap: 0.9rem;
-    margin-left: auto;
+    justify-self: end;
 }
 
 .header-meta {
@@ -220,6 +220,10 @@ a {
     color: rgba(19, 12, 5, 0.82);
     text-transform: none;
     transition: color var(--motion-fast) var(--ease-enter);
+}
+
+.header-nav {
+    justify-self: center;
 }
 
 .header-nav a::after {
@@ -323,6 +327,7 @@ a {
     position: relative;
     z-index: 2;
     max-width: 72rem;
+    width: 100%;
 }
 
 .aries-kicker {
@@ -355,19 +360,7 @@ a {
 .aries-home-hero__title-line {
     display: inline-flex;
     align-items: center;
-    gap: 0.65rem;
-}
-
-.aries-home-hero__squiggle {
-    display: inline-flex;
-    width: clamp(4.2rem, 7vw, 6.1rem);
-    color: var(--brand-accent);
-    flex-shrink: 0;
-}
-
-.aries-home-hero__squiggle svg {
-    width: 100%;
-    height: auto;
+    gap: 0;
 }
 
 .aries-home-hero__support {
@@ -376,8 +369,9 @@ a {
     align-items: end;
     justify-content: space-between;
     gap: 1.25rem 2rem;
-    margin-top: 2rem;
+    margin-top: 2.4rem;
     width: min(100%, 74rem);
+    min-height: 11rem;
 }
 
 .aries-home-hero__prose {
@@ -392,6 +386,7 @@ a {
     align-items: center;
     gap: 0.45rem;
     justify-self: end;
+    align-self: end;
 }
 
 .aries-hero-cta__label,
@@ -1640,6 +1635,7 @@ a {
     }
 
     .header-shell {
+        grid-template-columns: 1fr auto;
         min-height: 4.5rem;
         padding: 0.72rem 1rem;
         border-radius: 1.35rem;
@@ -1671,14 +1667,6 @@ a {
 
     .aries-home-section {
         padding: 4.2rem 0;
-    }
-
-    .aries-home-hero__title-line {
-        gap: 0.4rem;
-    }
-
-    .aries-home-hero__squiggle {
-        width: 3.5rem;
     }
 
     .aries-strip-heading,

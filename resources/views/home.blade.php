@@ -131,13 +131,6 @@
             <h1 class="aries-home-hero__title reveal reveal-delay-1">
                 Accélérer
                 <span class="aries-home-hero__title-line">
-                    <span class="aries-home-hero__squiggle" aria-hidden="true">
-                        <svg viewBox="0 0 273 121" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M271 0V74.415H251.492V19.583H202.906V0H271Z" fill="currentColor"/>
-                            <path d="M19.508 46.5845V93.3073L21.986 99.067L26.5761 101.417H68.0829V121H0V46.5845H19.508Z" fill="currentColor"/>
-                            <path d="M106.411 75.9475L162.534 14.1611C171.844 3.90916 188.849 10.5292 188.849 24.3981V75.9475L244.973 14.1611L259.388 27.3555L195.654 97.5205L195.653 97.5194C186.343 107.77 169.341 101.151 169.341 87.2824V35.7319L113.216 97.5205L113.215 97.5194C103.905 107.771 86.9026 101.151 86.9026 87.2824V37.426L28.5155 107.492L13.5528 94.9275L79.6723 15.583C88.7568 4.67857 106.411 11.1569 106.411 25.3318V75.9475Z" fill="currentColor"/>
-                        </svg>
-                    </span>
                     la croissance
                 </span>
                 en Afrique

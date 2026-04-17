@@ -170,6 +170,8 @@ button, input, textarea, select { font: inherit; }
 }
 
 .header-shell {
+    position: relative;
+    z-index: 2;
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
@@ -305,40 +307,81 @@ button, input, textarea, select { font: inherit; }
 }
 
 .mobile-nav {
-    position: absolute;
-    inset-inline: 1rem;
-    inset-block-start: calc(100% + .7rem);
-    z-index: 210;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: calc(5.1rem + env(safe-area-inset-top, 0px)) 1rem 1rem;
+    background: rgba(19,12,5,.26);
+    backdrop-filter: blur(10px);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transform: translateY(-12px);
-    transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease;
+    transition: opacity 220ms ease, visibility 220ms ease;
 }
 
 .mobile-nav.is-open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transform: translateY(0);
 }
 
 .mobile-nav__panel {
     display: grid;
-    gap: .7rem;
+    gap: .85rem;
+    width: min(100%, 32rem);
     padding: .95rem;
-    border-radius: 1.65rem;
+    border-radius: 1.75rem;
     background: rgba(255,255,255,.98);
     border: 1px solid rgba(19,12,5,.08);
     box-shadow: 0 22px 60px rgba(19,12,5,.14);
     backdrop-filter: blur(18px);
-    max-height: calc(100svh - 7rem);
+    max-height: calc(100svh - 6.4rem - env(safe-area-inset-top, 0px));
     overflow-y: auto;
+    transform: translateY(-10px) scale(.985);
+    transition: transform 220ms ease;
+}
+
+.mobile-nav.is-open .mobile-nav__panel {
+    transform: translateY(0) scale(1);
+}
+
+.mobile-nav__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .35rem .3rem .7rem;
+    border-bottom: 1px solid rgba(19,12,5,.08);
+}
+
+.mobile-nav__eyebrow {
+    font-size: .74rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(19,12,5,.48);
+}
+
+.mobile-nav__status {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2rem;
+    padding: 0 .75rem;
+    border-radius: 999px;
+    background: rgba(228,167,76,.16);
+    color: var(--navy);
+    font-size: .74rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
 }
 
 .mobile-nav__links {
     display: grid;
-    gap: .45rem;
+    gap: .5rem;
 }
 
 .mobile-nav__link {
@@ -346,14 +389,16 @@ button, input, textarea, select { font: inherit; }
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding: .95rem 1rem;
-    border-radius: 1rem;
-    font-size: 1rem;
+    min-height: 3.55rem;
+    padding: 1rem 1rem;
+    border-radius: 1.05rem;
+    font-size: 1.03rem;
     font-weight: 700;
     letter-spacing: -.02em;
     color: var(--navy);
     background: rgba(247,243,235,.9);
-    transition: background var(--t1), color var(--t1), transform var(--t1);
+    border: 1px solid transparent;
+    transition: background var(--t1), color var(--t1), transform var(--t1), border-color var(--t1);
 }
 
 .mobile-nav__link::after {
@@ -369,14 +414,22 @@ button, input, textarea, select { font: inherit; }
 
 .mobile-nav__link:hover,
 .mobile-nav__link.active {
-    color: var(--navy);
-    background: rgba(228,167,76,.22);
+    color: var(--white);
+    background: var(--navy);
+    border-color: rgba(19,12,5,.16);
     transform: translateX(2px);
 }
 
+.mobile-nav__link.active::after,
+.mobile-nav__link:hover::after {
+    opacity: .78;
+}
+
 .mobile-nav__footer {
-    padding-top: .2rem;
+    padding-top: .4rem;
     border-top: 1px solid rgba(19,12,5,.08);
+    display: grid;
+    gap: .8rem;
 }
 
 .mobile-nav__cta {
@@ -398,6 +451,15 @@ button, input, textarea, select { font: inherit; }
 .mobile-nav__cta:hover {
     background: var(--gold);
     transform: translateY(-1px);
+}
+
+.mobile-nav__meta {
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(19,12,5,.46);
+    text-align: center;
 }
 
 html.menu-open,
@@ -2710,7 +2772,8 @@ html.menu-open body {
     }
 
     .mobile-nav {
-        inset-inline: .85rem;
+        padding-inline: .85rem;
+        padding-bottom: .85rem;
     }
 
     .page-hero__title {
@@ -2815,10 +2878,12 @@ html.menu-open body {
     }
 
     .mobile-nav {
-        inset-inline: .75rem;
+        padding-inline: .75rem;
+        padding-bottom: .75rem;
     }
 
     .mobile-nav__panel {
+        width: 100%;
         padding: .8rem;
         border-radius: 1.4rem;
     }

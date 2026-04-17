@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.querySelector('[data-mobile-menu]');
 
     if (mobileMenuToggle && mobileMenu) {
+        const mobileMenuPanel = mobileMenu.querySelector('[data-mobile-menu-panel]');
         const mobileMenuLinks = mobileMenu.querySelectorAll('[data-mobile-menu-link]');
         const desktopMq = window.matchMedia('(min-width: 1024px)');
         let closingTimer;
@@ -75,7 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.addEventListener('click', (event) => {
             if (mobileMenu.hidden) return;
-            if (mobileMenu.contains(event.target) || mobileMenuToggle.contains(event.target)) return;
+            if (mobileMenuToggle.contains(event.target)) return;
+            if (event.target === mobileMenu) {
+                closeMobileMenu();
+                return;
+            }
+            if (mobileMenuPanel?.contains(event.target)) return;
             closeMobileMenu();
         });
 

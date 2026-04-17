@@ -61,7 +61,12 @@
             hidden
             data-mobile-menu
         >
-            <nav class="mobile-nav__panel" aria-label="Navigation mobile">
+            <nav class="mobile-nav__panel" aria-label="Navigation mobile" data-mobile-menu-panel>
+                <div class="mobile-nav__header">
+                    <p class="mobile-nav__eyebrow">Navigation</p>
+                    <span class="mobile-nav__status">ARIES</span>
+                </div>
+
                 <div class="mobile-nav__links">
                     @foreach ($navigationItems as $item)
                         <a
@@ -81,6 +86,8 @@
                     <a href="{{ route('contact') }}" class="mobile-nav__cta" data-mobile-menu-link>
                         Contact
                     </a>
+
+                    <p class="mobile-nav__meta">Brazzaville · Washington</p>
                 </div>
             </nav>
         </div>

@@ -11,7 +11,7 @@
                 >
             </a>
 
-            <nav class="header-nav hidden lg:flex items-center gap-7" aria-label="Navigation principale">
+            <nav class="header-nav hidden lg:flex items-center" aria-label="Navigation principale">
                 <a href="{{ route('home') }}" @class(['active' => request()->routeIs('home')])>Accueil</a>
                 <a href="{{ route('presentation') }}" @class(['active' => request()->routeIs('presentation')])>Présentation</a>
                 <a href="{{ route('expertise') }}" @class(['active' => request()->routeIs('expertise')])>Expertise</a>
@@ -22,7 +22,7 @@
 
             <div class="header-actions">
                 <a href="{{ route('contact') }}" class="hidden lg:inline-flex header-cta header-cta--ghost">
-                    Nous contacter
+                    Contact
                 </a>
             </div>
         </div>

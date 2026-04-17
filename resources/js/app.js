@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ── Split text reveal for h-hero__title ── */
     const heroTitle = document.querySelector('.h-hero__title');
-    if (heroTitle) {
+    if (heroTitle && heroTitle.dataset.split !== 'false') {
         const words = heroTitle.innerHTML.split(/(<[^>]+>|\s+)/);
         let wrapped = '';
         let delay = 0;

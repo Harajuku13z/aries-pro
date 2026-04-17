@@ -1,6 +1,6 @@
 {{-- ─── ARIES Footer ─── --}}
 <footer class="site-footer">
-    <div class="h-px bg-gradient-to-r from-transparent via-[#C8A55A] to-transparent opacity-20"></div>
+    <div class="h-px bg-gradient-to-r from-transparent via-[#EE9928] to-transparent opacity-20"></div>
 
     <div class="max-w-[1440px] mx-auto px-6 lg:px-12 xl:px-20 pt-16 pb-10">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
@@ -39,7 +39,7 @@
                     <li>
                         <a href="{{ route($item['route']) }}"
                            class="text-[rgba(255,255,255,0.62)] text-sm hover:text-white transition-colors duration-300 flex items-center gap-2 group">
-                            <span class="w-3 h-px bg-[#C8A55A] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex-shrink-0"></span>
+                            <span class="w-3 h-px bg-[#EE9928] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex-shrink-0"></span>
                             {{ $item['label'] }}
                         </a>
                     </li>
@@ -51,7 +51,7 @@
                 <h4 class="text-white text-xs font-semibold tracking-[0.18em] uppercase mb-6">Contact</h4>
                 <ul class="space-y-3">
                     <li class="flex items-start gap-3">
-                        <div class="w-5 h-5 mt-0.5 flex-shrink-0 text-[#C8A55A]">
+                        <div class="w-5 h-5 mt-0.5 flex-shrink-0 text-[#EE9928]">
                             <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
                                 <path d="M10 2C6.686 2 4 4.686 4 8c0 4.5 6 10 6 10s6-5.5 6-10c0-3.314-2.686-6-6-6z"/>
                                 <circle cx="10" cy="8" r="2"/>
@@ -62,7 +62,7 @@
                         </div>
                     </li>
                     <li class="flex items-center gap-3">
-                        <div class="w-5 h-5 flex-shrink-0 text-[#C8A55A]">
+                        <div class="w-5 h-5 flex-shrink-0 text-[#EE9928]">
                             <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
                                 <path d="M3 4h14v12H3z"/><path d="M3 4l7 7 7-7"/>
                             </svg>
@@ -72,7 +72,7 @@
                         </a>
                     </li>
                     <li class="flex items-center gap-3">
-                        <div class="w-5 h-5 flex-shrink-0 text-[#C8A55A]">
+                        <div class="w-5 h-5 flex-shrink-0 text-[#EE9928]">
                             <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
                                 <path d="M3 3h3l1.5 4L6 8.5c1.5 2.5 4 5 6.5 6.5L14 13l4 1.5V18c0 0-1 1-3 1C7 19 1 13 1 6 1 4 2 3 3 3z"/>
                             </svg>
@@ -83,7 +83,7 @@
                         </div>
                     </li>
                     <li class="flex items-center gap-3">
-                        <div class="w-5 h-5 flex-shrink-0 text-[#C8A55A]">
+                        <div class="w-5 h-5 flex-shrink-0 text-[#EE9928]">
                             <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
                                 <path d="M3 3h3l1.5 4L6 8.5c1.5 2.5 4 5 6.5 6.5L14 13l4 1.5V18c0 0-1 1-3 1C7 19 1 13 1 6 1 4 2 3 3 3z"/>
                             </svg>

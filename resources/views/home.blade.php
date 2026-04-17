@@ -1,314 +1,506 @@
 @extends('layouts.app')
 
-@section('title', 'ARIES Investissements — Conseil financier & investissement en Afrique')
+@section('title', 'ARIES Investissements — Investir en Afrique avec vision et rigueur')
 @section('description', 'ARIES Investissements accompagne investisseurs, institutions et porteurs de projets en Afrique avec une approche stratégique, financière et opérationnelle.')
 
 @section('content')
 
-@php
-    $growthCards = [
-        [
-            'title' => 'S’implanter',
-            'desc' => 'Aider investisseurs, groupes et partenaires à entrer sur le marché avec une lecture locale fiable.',
-            'image' => 'hero-building.jpg',
-            'alt' => 'Horizon urbain symbolisant une implantation stratégique en Afrique centrale',
-            'href' => route('presentation'),
-        ],
-        [
-            'title' => 'Structurer',
-            'desc' => 'Transformer une ambition en montage financier, opérationnel et partenarial crédible.',
-            'image' => 'team-photo.jpg',
-            'alt' => 'Équipe en discussion autour de la structuration d’un projet',
-            'href' => route('expertise'),
-        ],
-        [
-            'title' => 'Accélérer',
-            'desc' => 'Aider les projets déjà engagés à lever des fonds, sécuriser leurs parties prenantes et passer à l’échelle.',
-            'image' => 'hero-bridge.jpg',
-            'alt' => 'Pont illustrant l’accélération et la mise à l’échelle d’un projet',
-            'href' => route('sectors'),
-        ],
-    ];
-
-    $featureBlocks = [
-        [
-            'eyebrow' => 'Pourquoi ARIES',
-            'title' => 'Votre avantage terrain en Afrique centrale',
-            'body' => [
-                'ARIES Investissements accompagne investisseurs, institutions et dirigeants qui ont besoin d’un partenaire capable de lire le contexte, structurer les options et sécuriser les bonnes décisions.',
-                'De l’analyse stratégique à la mise en relation qualifiée, nous intervenons là où l’exécution demande à la fois une discipline financière élevée et une compréhension fine des réalités africaines.',
-            ],
-            'cta' => 'Voir notre expertise',
-            'href' => route('expertise'),
-            'image' => 'hero-bridge.jpg',
-            'alt' => 'Pont représentant le lien entre stratégie et exécution',
-            'layout' => 'right',
-        ],
-        [
-            'eyebrow' => 'Équipe dirigeante',
-            'title' => 'Une équipe qui parle finance, terrain et exécution',
-            'body' => [
-                'Fondée par des professionnels aguerris de la finance et du conseil, ARIES Investissements combine réseau, exigence et proximité avec les décideurs locaux.',
-                'Nous aidons nos clients à aller plus vite sans perdre en rigueur, en gardant la bonne lecture des acteurs, des risques et du tempo opérationnel.',
-            ],
-            'cta' => 'Découvrir l’équipe',
-            'href' => route('team'),
-            'image' => 'team-photo.jpg',
-            'alt' => 'L’équipe dirigeante d’ARIES Investissements',
-            'layout' => 'left',
-        ],
-    ];
-
-    $sectorHighlights = [
-        [
-            'tag' => 'Infrastructures',
-            'title' => 'Projets qui structurent durablement un marché',
-            'desc' => 'Transport, énergie, télécoms et logistique : nous accompagnons les dossiers qui ont besoin d’un montage robuste.',
-            'meta' => 'Afrique centrale',
-            'image' => 'hero-building.jpg',
-            'alt' => 'Ville moderne représentant les infrastructures et la croissance',
-            'href' => route('sectors'),
-        ],
-        [
-            'tag' => 'Immobilier',
-            'title' => 'Actifs stratégiques et exécution disciplinée',
-            'desc' => 'Résidentiel, commercial, hôtellerie et actifs urbains dans les marchés à fort potentiel.',
-            'meta' => 'Brazzaville · Région',
-            'image' => 'hero-bridge.jpg',
-            'alt' => 'Pont et structures urbaines représentant des actifs immobiliers stratégiques',
-            'href' => route('sectors'),
-        ],
-        [
-            'tag' => 'Agrobusiness',
-            'title' => 'Passer du potentiel à des projets bancables',
-            'desc' => 'Chaînes de valeur, transformation agricole et structuration d’opérations à impact durable.',
-            'meta' => 'Croissance réelle',
-            'image' => 'team-photo.jpg',
-            'alt' => 'Équipe en discussion symbolisant la structuration de projets à impact',
-            'href' => route('sectors'),
-        ],
-    ];
-
-    $publications = [
-        [
-            'tag' => 'Analyse',
-            'title' => 'L’Afrique centrale, nouveau hub d’investissement',
-            'desc' => 'Lecture des dynamiques d’investissement et des opportunités qui structurent la sous-région.',
-            'image' => 'hero-building.jpg',
-            'alt' => 'Paysage urbain utilisé comme illustration d’analyse',
-        ],
-        [
-            'tag' => 'Perspectives',
-            'title' => 'Financement des infrastructures : nouveaux équilibres',
-            'desc' => 'Comment mobiliser dette, capital patient et partenaires institutionnels sur les projets structurants.',
-            'image' => 'hero-bridge.jpg',
-            'alt' => 'Pont représentant le financement des infrastructures',
-        ],
-        [
-            'tag' => 'Secteurs',
-            'title' => 'Agrobusiness : transformer le potentiel en projets bancables',
-            'desc' => 'Des chaînes de valeur à la structuration financière, les leviers concrets pour passer à l’exécution.',
-            'image' => 'team-photo.jpg',
-            'alt' => 'Photo d’équipe utilisée pour illustrer les secteurs stratégiques',
-        ],
-    ];
-@endphp
-
-<section class="aries-home-hero" aria-label="Introduction">
-    <div class="aries-home-hero__media">
-        <img
-            src="{{ asset('images/lion-ambition.jpg') }}"
-            alt="Lion symbolisant l’ambition et la puissance d’exécution d’ARIES"
-            loading="eager"
-        >
-        <div class="aries-home-hero__overlay"></div>
+{{-- ═══════════════════════════════════════════
+     1. HERO
+═══════════════════════════════════════════ --}}
+<section class="h-hero" id="accueil" aria-label="Accueil">
+    <div class="h-hero__media">
+        <img src="{{ asset('images/hero-main.jpg') }}" alt="Afrique — investissement et développement" loading="eager">
+        <div class="h-hero__overlay"></div>
     </div>
 
-    <div class="aries-home-hero__panel">
-        <div class="aries-home-hero__copy">
-            <p class="aries-kicker aries-kicker--hero reveal">ARIES Investissements</p>
-
-            <h1 class="aries-home-hero__title reveal reveal-delay-1">
-                Accélérer
-                <span class="aries-home-hero__title-line">
-                    la croissance
-                </span>
-                en Afrique
+    <div class="h-hero__content">
+        <div class="h-hero__inner">
+            <p class="h-kicker reveal">ARIES Investissements</p>
+            <h1 class="h-hero__title reveal reveal-delay-1">
+                Investir en Afrique<br>
+                <em>avec vision et rigueur</em>
             </h1>
-
-            <div class="aries-home-hero__support">
-                <div class="aries-home-hero__prose reveal reveal-delay-2">
-                    <p>
-                        Nous aidons investisseurs, institutions et porteurs de projets à structurer, financer et accélérer leurs opérations en Afrique centrale avec plus de clarté, de discipline et d’impact.
-                    </p>
-                </div>
-
-                <div class="reveal reveal-delay-3">
-                    <a href="{{ route('expertise') }}" class="aries-hero-cta" aria-label="En savoir plus sur notre expertise">
-                        <span class="aries-hero-cta__label">En savoir plus</span>
-                        <span class="aries-hero-cta__arrow" aria-hidden="true">
-                            <svg viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1.77951 3.04422L7.63351 3.04422L0.000488281 10.6772L1.80951 12.4854L9.44253 4.85233L9.44253 10.7063H12.0005V0.485352L1.77951 0.485352L1.77951 3.04422Z" fill="currentColor"/>
-                            </svg>
-                        </span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="aries-home-section" aria-label="Trois façons d’avancer">
-    <div class="max-w-[1440px] mx-auto px-5 lg:px-10 xl:px-16">
-        <div class="aries-section-heading aries-section-heading--center">
-            <p class="aries-kicker reveal">Prêt à grandir ?</p>
-            <h2 class="aries-display reveal reveal-delay-1">
-                Nous sommes prêts à structurer la prochaine étape.
-            </h2>
-        </div>
-
-        <div class="aries-card-grid">
-            @foreach($growthCards as $i => $card)
-            <a href="{{ $card['href'] }}" class="aries-service-card reveal reveal-delay-{{ $i + 1 }}">
-                <div class="aries-service-card__media">
-                    <img src="{{ asset('images/' . $card['image']) }}" alt="{{ $card['alt'] }}" loading="lazy">
-                </div>
-
-                <div class="aries-service-card__body">
-                    <h3>{{ $card['title'] }}</h3>
-                    <p>{{ $card['desc'] }}</p>
-                </div>
-            </a>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-@foreach($featureBlocks as $i => $block)
-<section class="aries-home-section" aria-label="{{ $block['title'] }}">
-    <div class="max-w-[1440px] mx-auto px-5 lg:px-10 xl:px-16">
-        <div class="aries-media {{ $block['layout'] === 'left' ? 'aries-media--left' : '' }}">
-            <div class="aries-media__content">
-                <p class="aries-kicker reveal">{{ $block['eyebrow'] }}</p>
-                <h2 class="aries-display aries-display--narrow reveal reveal-delay-1">{{ $block['title'] }}</h2>
-
-                <div class="aries-prose reveal reveal-delay-2">
-                    @foreach($block['body'] as $paragraph)
-                    <p>{{ $paragraph }}</p>
-                    @endforeach
-                </div>
-
-                <div class="reveal reveal-delay-3">
-                    <a href="{{ $block['href'] }}" class="aries-btn aries-btn--primary">
-                        {{ $block['cta'] }}
-                        <span class="aries-btn__icon" aria-hidden="true">
-                            <svg viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1.77951 3.04422L7.63351 3.04422L0.000488281 10.6772L1.80951 12.4854L9.44253 4.85233L9.44253 10.7063H12.0005V0.485352L1.77951 0.485352L1.77951 3.04422Z" fill="currentColor"/>
-                            </svg>
-                        </span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="aries-media__visual {{ $block['layout'] === 'left' ? 'reveal-left' : 'reveal-right' }}">
-                <div class="aries-media__frame">
-                    <img
-                        src="{{ asset('images/' . $block['image']) }}"
-                        alt="{{ $block['alt'] }}"
-                        loading="lazy"
-                    >
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-@endforeach
-
-<section class="aries-home-section" aria-label="Secteurs stratégiques">
-    <div class="max-w-[1440px] mx-auto px-5 lg:px-10 xl:px-16">
-        <div class="aries-strip-heading">
-            <h2 class="aries-section-inline-title reveal">Secteurs stratégiques</h2>
-            <a href="{{ route('sectors') }}" class="aries-mini-link reveal reveal-delay-1">
-                Voir tout
-                <span aria-hidden="true">↗</span>
-            </a>
-        </div>
-
-        <div class="aries-compact-grid">
-            @foreach($sectorHighlights as $i => $sector)
-            <a href="{{ $sector['href'] }}" class="aries-compact-card reveal reveal-delay-{{ $i + 1 }}">
-                <div class="aries-compact-card__media">
-                    <img src="{{ asset('images/' . $sector['image']) }}" alt="{{ $sector['alt'] }}" loading="lazy">
-                </div>
-                <div class="aries-compact-card__body">
-                    <span class="aries-compact-card__tag">{{ $sector['tag'] }}</span>
-                    <h3>{{ $sector['title'] }}</h3>
-                    <p>{{ $sector['desc'] }}</p>
-                    <span class="aries-compact-card__meta">{{ $sector['meta'] }}</span>
-                </div>
-            </a>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-<section class="aries-home-section" aria-label="Dernières analyses">
-    <div class="max-w-[1440px] mx-auto px-5 lg:px-10 xl:px-16">
-        <div class="aries-strip-heading">
-            <h2 class="aries-section-inline-title reveal">Dernières analyses</h2>
-            <a href="{{ route('publications') }}" class="aries-mini-link reveal reveal-delay-1">
-                Voir tout
-                <span aria-hidden="true">↗</span>
-            </a>
-        </div>
-
-        <div class="aries-compact-grid">
-            @foreach($publications as $i => $publication)
-            <a href="{{ route('publications') }}" class="aries-compact-card aries-compact-card--light reveal reveal-delay-{{ $i + 1 }}">
-                <div class="aries-compact-card__media">
-                    <img src="{{ asset('images/' . $publication['image']) }}" alt="{{ $publication['alt'] }}" loading="lazy">
-                </div>
-                <div class="aries-compact-card__body">
-                    <span class="aries-compact-card__tag">{{ $publication['tag'] }}</span>
-                    <h3>{{ $publication['title'] }}</h3>
-                    <p>{{ $publication['desc'] }}</p>
-                </div>
-            </a>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-<section class="aries-home-cta" aria-label="Contact">
-    <div class="max-w-[1440px] mx-auto px-5 lg:px-10 xl:px-16">
-        <div class="aries-home-cta__grid reveal">
-            <div class="aries-home-cta__image">
-                <img
-                    src="{{ asset('images/team-photo.jpg') }}"
-                    alt="Équipe ARIES Investissements"
-                    loading="lazy"
-                >
-            </div>
-
-            <div class="aries-home-cta__panel">
-                <p class="aries-kicker aries-kicker--light">Parlons de votre projet</p>
-                <h2 class="aries-display aries-display--light">
-                    Prêt à grandir ? Nous sommes prêts à y aller.
-                </h2>
-                <p>
-                    Investisseur, entrepreneur ou institution : ARIES vous aide à cadrer les bonnes options et à transformer une ambition en trajectoire crédible.
-                </p>
-
-                <a href="{{ route('contact') }}" class="aries-btn aries-btn--dark">
-                    Prendre contact
-                    <span class="aries-btn__icon" aria-hidden="true">
-                        <svg viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.77951 3.04422L7.63351 3.04422L0.000488281 10.6772L1.80951 12.4854L9.44253 4.85233L9.44253 10.7063H12.0005V0.485352L1.77951 0.485352L1.77951 3.04422Z" fill="currentColor"/>
-                        </svg>
-                    </span>
+            <p class="h-hero__sub reveal reveal-delay-2">
+                Partenaire stratégique pour structurer, financer et sécuriser<br class="hidden lg:block">
+                vos projets d'investissement en Afrique centrale.
+            </p>
+            <div class="h-hero__ctas reveal reveal-delay-3">
+                <a href="{{ route('presentation') }}" class="h-btn h-btn--primary">
+                    Découvrir ARIES
+                    <svg viewBox="0 0 12 13" fill="none"><path d="M1.78 3.04h5.85L0 10.68l1.81 1.81 7.63-7.63v5.85H12V.49H1.78v2.55z" fill="currentColor"/></svg>
+                </a>
+                <a href="{{ route('contact') }}" class="h-btn h-btn--ghost">
+                    Nous contacter
                 </a>
             </div>
         </div>
+
+        <div class="h-hero__scroll-hint" aria-hidden="true">
+            <span></span>
+        </div>
+    </div>
+</section>
+
+{{-- ═══════════════════════════════════════════
+     2. À PROPOS (aperçu)
+═══════════════════════════════════════════ --}}
+<section class="h-section h-section--light" id="a-propos" aria-label="À propos d'ARIES">
+    <div class="h-container">
+        <div class="h-about">
+            <div class="h-about__visual reveal-left">
+                <div class="h-about__frame">
+                    <img src="{{ asset('images/about-africa.jpg') }}" alt="Skyline africain — Brazzaville" loading="lazy">
+                </div>
+                <div class="h-about__badge">
+                    <span class="h-about__badge-year">2015</span>
+                    <span class="h-about__badge-label">Fondée à<br>Brazzaville</span>
+                </div>
+            </div>
+
+            <div class="h-about__content">
+                <p class="h-kicker reveal">À propos</p>
+                <h2 class="h-display reveal reveal-delay-1">
+                    Un partenaire au cœur<br>de l'économie africaine
+                </h2>
+                <div class="h-prose reveal reveal-delay-2">
+                    <p>
+                        ARIES Investissements accompagne les acteurs économiques dans la conception et la réussite de projets à fort impact en Afrique.
+                    </p>
+                    <p>
+                        Notre approche repose sur une parfaite connaissance des marchés, une expertise financière pointue et un réseau international solide.
+                    </p>
+                </div>
+                <div class="reveal reveal-delay-3">
+                    <a href="{{ route('presentation') }}" class="h-btn h-btn--primary">
+                        En savoir plus
+                        <svg viewBox="0 0 12 13" fill="none"><path d="M1.78 3.04h5.85L0 10.68l1.81 1.81 7.63-7.63v5.85H12V.49H1.78v2.55z" fill="currentColor"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- ═══════════════════════════════════════════
+     3. MISSION + VALEURS
+═══════════════════════════════════════════ --}}
+<section class="h-section h-section--dark" id="mission" aria-label="Mission et valeurs">
+    <div class="h-container">
+        <div class="h-mission">
+            <div class="h-mission__left reveal-left">
+                <p class="h-kicker h-kicker--gold">Notre mission</p>
+                <h2 class="h-display h-display--light">
+                    Faire émerger de nouveaux<br>champions africains
+                </h2>
+                <p class="h-mission__text">
+                    Nous accompagnons chaque projet avec exigence, de la conception à l'exécution, en mobilisant les meilleures ressources humaines et financières.
+                </p>
+            </div>
+
+            <div class="h-mission__values reveal-right">
+                <p class="h-kicker h-kicker--gold">Nos valeurs</p>
+                <div class="h-values">
+                    <div class="h-value">
+                        <span class="h-value__number">01</span>
+                        <div>
+                            <strong>Indépendance</strong>
+                            <p>Un conseil libre de tout conflit d'intérêt, aligné sur vos objectifs.</p>
+                        </div>
+                    </div>
+                    <div class="h-value">
+                        <span class="h-value__number">02</span>
+                        <div>
+                            <strong>Rigueur</strong>
+                            <p>Des analyses approfondies et des recommandations documentées.</p>
+                        </div>
+                    </div>
+                    <div class="h-value">
+                        <span class="h-value__number">03</span>
+                        <div>
+                            <strong>Professionnalisme</strong>
+                            <p>Des standards internationaux appliqués aux réalités africaines.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- ═══════════════════════════════════════════
+     4. CHIFFRES CLÉS
+═══════════════════════════════════════════ --}}
+<section class="h-section h-section--gold" id="chiffres" aria-label="Chiffres clés">
+    <div class="h-container">
+        <div class="h-stats">
+            <div class="h-stat reveal">
+                <span class="h-stat__number"><span data-count="100" data-suffix="Md+">0</span></span>
+                <span class="h-stat__label">FCFA analysés</span>
+            </div>
+            <div class="h-stat reveal reveal-delay-1">
+                <span class="h-stat__number"><span data-count="12" data-suffix="+">0</span></span>
+                <span class="h-stat__label">Pays couverts</span>
+            </div>
+            <div class="h-stat reveal reveal-delay-2">
+                <span class="h-stat__number"><span data-count="50" data-suffix="+">0</span></span>
+                <span class="h-stat__label">Experts mobilisés</span>
+            </div>
+            <div class="h-stat reveal reveal-delay-3">
+                <span class="h-stat__number"><span data-count="4" data-suffix="">0</span></span>
+                <span class="h-stat__label">Secteurs d'intervention</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- ═══════════════════════════════════════════
+     5. SECTEURS
+═══════════════════════════════════════════ --}}
+<section class="h-section h-section--light" id="secteurs" aria-label="Secteurs d'intervention">
+    <div class="h-container">
+        <div class="h-section-head h-section-head--center reveal">
+            <p class="h-kicker">Nos secteurs</p>
+            <h2 class="h-display">Là où nous créons de la valeur</h2>
+        </div>
+
+        <div class="h-sectors">
+            @php
+            $sectors = [
+                ['title' => 'Infrastructures', 'desc' => 'Transport, énergie, télécoms et logistique — des montages robustes pour des projets structurants.', 'image' => 'sector-infra.jpg', 'href' => route('sectors')],
+                ['title' => 'Immobilier', 'desc' => 'Actifs stratégiques résidentiels, commerciaux et hôteliers dans les marchés à fort potentiel.', 'image' => 'sector-immo.jpg', 'href' => route('sectors')],
+                ['title' => 'Agrobusiness', 'desc' => "Chaînes de valeur, transformation agricole et projets bancables à impact durable.", 'image' => 'sector-agro.jpg', 'href' => route('sectors')],
+                ['title' => 'Technologie', 'desc' => 'Fintech, digital et innovation : accompagnement des startups à fort potentiel de croissance.', 'image' => 'sector-tech.jpg', 'href' => route('sectors')],
+            ];
+            @endphp
+
+            @foreach($sectors as $i => $s)
+            <a href="{{ $s['href'] }}" class="h-sector-card reveal reveal-delay-{{ $i + 1 }}">
+                <div class="h-sector-card__media">
+                    <img src="{{ asset('images/' . $s['image']) }}" alt="{{ $s['title'] }}" loading="lazy">
+                    <div class="h-sector-card__overlay"></div>
+                </div>
+                <div class="h-sector-card__body">
+                    <h3 class="h-sector-card__title">{{ $s['title'] }}</h3>
+                    <p class="h-sector-card__desc">{{ $s['desc'] }}</p>
+                    <span class="h-sector-card__cta">Explorer →</span>
+                </div>
+            </a>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+{{-- ═══════════════════════════════════════════
+     6. EXPERTISES
+═══════════════════════════════════════════ --}}
+<section class="h-section h-section--dark" id="expertises" aria-label="Nos expertises">
+    <div class="h-container">
+        <div class="h-section-head reveal">
+            <p class="h-kicker h-kicker--gold">Expertises</p>
+            <h2 class="h-display h-display--light">Ce que nous faisons,<br>mieux que quiconque</h2>
+        </div>
+
+        <div class="h-expertises">
+            @php
+            $expertises = [
+                ['num' => '01', 'title' => 'Conseil stratégique', 'desc' => "Analyse de marché, positionnement concurrentiel, feuille de route opérationnelle. Nous traduisons votre ambition en plan d'action crédible."],
+                ['num' => '02', 'title' => 'Levée de fonds', 'desc' => 'Structuration des dossiers d'investissement, mise en relation avec investisseurs institutionnels et privés, négociation des termes.'],
+                ['num' => '03', 'title' => 'Intelligence économique', 'desc' => 'Veille stratégique, analyse des risques, cartographie des acteurs et opportunités sur les marchés africains.'],
+                ['num' => '04', 'title' => 'Structuration & investissement', 'desc' => 'Montage financier, optimisation fiscale, gestion des parties prenantes et sécurisation des investissements.'],
+            ];
+            @endphp
+
+            @foreach($expertises as $i => $e)
+            <div class="h-expertise reveal reveal-delay-{{ $i + 1 }}">
+                <span class="h-expertise__num">{{ $e['num'] }}</span>
+                <div class="h-expertise__content">
+                    <h3>{{ $e['title'] }}</h3>
+                    <p>{{ $e['desc'] }}</p>
+                </div>
+                <a href="{{ route('expertise') }}" class="h-expertise__link" aria-label="En savoir plus sur {{ $e['title'] }}">→</a>
+            </div>
+            @endforeach
+        </div>
+
+        <div class="h-expertises__cta reveal">
+            <a href="{{ route('expertise') }}" class="h-btn h-btn--outline-gold">
+                Voir toutes nos expertises
+                <svg viewBox="0 0 12 13" fill="none"><path d="M1.78 3.04h5.85L0 10.68l1.81 1.81 7.63-7.63v5.85H12V.49H1.78v2.55z" fill="currentColor"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+{{-- ═══════════════════════════════════════════
+     7. POURQUOI ARIES
+═══════════════════════════════════════════ --}}
+<section class="h-section h-section--light" id="approche" aria-label="Pourquoi choisir ARIES">
+    <div class="h-container">
+        <div class="h-why">
+            <div class="h-why__content">
+                <p class="h-kicker reveal">Pourquoi ARIES ?</p>
+                <h2 class="h-display reveal reveal-delay-1">
+                    Un avantage terrain que<br>peu peuvent offrir
+                </h2>
+                <p class="h-prose reveal reveal-delay-2">
+                    En Afrique centrale, le succès d'un investissement tient autant à la qualité du réseau qu'à celle du dossier. ARIES combine les deux.
+                </p>
+
+                <div class="h-pillars reveal reveal-delay-3">
+                    @php
+                    $pillars = [
+                        ['icon' => '◆', 'title' => 'Vision long terme', 'desc' => 'Des stratégies pensées pour durer, pas pour briller le temps d'un pitch.'],
+                        ['icon' => '◆', 'title' => 'Expertise locale + internationale', 'desc' => 'Connaissance fine du terrain africain, standards financiers internationaux.'],
+                        ['icon' => '◆', 'title' => 'Accompagnement sur mesure', 'desc' => 'Chaque dossier est traité avec une attention et une personnalisation totale.'],
+                        ['icon' => '◆', 'title' => "Réseau d'influence", 'desc' => 'Accès aux décideurs, investisseurs et institutions qui comptent.'],
+                    ];
+                    @endphp
+
+                    @foreach($pillars as $p)
+                    <div class="h-pillar">
+                        <span class="h-pillar__icon" aria-hidden="true">{{ $p['icon'] }}</span>
+                        <div>
+                            <strong>{{ $p['title'] }}</strong>
+                            <p>{{ $p['desc'] }}</p>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+
+            <div class="h-why__visual reveal-right">
+                <img src="{{ asset('images/hero-bridge.jpg') }}" alt="Pont représentant la connexion stratégique" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- ═══════════════════════════════════════════
+     8. PARTENAIRES / RÉFÉRENCES
+═══════════════════════════════════════════ --}}
+<section class="h-section h-section--neutral" id="partenaires" aria-label="Partenaires et références">
+    <div class="h-container">
+        <div class="h-section-head h-section-head--center reveal">
+            <p class="h-kicker">Partenaires & références</p>
+            <h2 class="h-display">Un réseau qui ouvre des portes</h2>
+        </div>
+
+        <div class="h-partners reveal reveal-delay-1">
+            @php
+            $partners = [
+                ['name' => 'Banque Mondiale', 'abbr' => 'WB'],
+                ['name' => 'Afreximbank', 'abbr' => 'AFRI'],
+                ['name' => 'IFC', 'abbr' => 'IFC'],
+                ['name' => 'BDEAC', 'abbr' => 'BDEAC'],
+                ['name' => 'Société Générale', 'abbr' => 'SG'],
+                ['name' => 'BGFI Bank', 'abbr' => 'BGFI'],
+                ['name' => 'TotalEnergies', 'abbr' => 'TTE'],
+                ['name' => 'Orange Africa', 'abbr' => 'OA'],
+            ];
+            @endphp
+
+            @foreach($partners as $p)
+            <div class="h-partner">
+                <span class="h-partner__abbr">{{ $p['abbr'] }}</span>
+                <span class="h-partner__name">{{ $p['name'] }}</span>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+{{-- ═══════════════════════════════════════════
+     9. ÉQUIPE
+═══════════════════════════════════════════ --}}
+<section class="h-section h-section--light" id="equipe" aria-label="Notre équipe">
+    <div class="h-container">
+        <div class="h-section-head reveal">
+            <p class="h-kicker">L'équipe</p>
+            <h2 class="h-display">Finance, terrain, exécution</h2>
+        </div>
+
+        <div class="h-team">
+            @php
+            $members = [
+                ['name' => 'Loïc Mackosso', 'role' => 'Fondateur & Directeur Général', 'bio' => 'Expert en structuration financière et développement stratégique en Afrique centrale. Fort d\'un parcours international alliant finance et conseil.', 'photo' => 'team-photo.jpg'],
+                ['name' => 'Régis Matondo', 'role' => 'Directeur des Investissements', 'bio' => 'Spécialiste de la levée de fonds et de l\'intelligence économique. Accompagne les projets d\'infrastructures et d\'agrobusiness depuis plus de 10 ans.', 'photo' => 'team-photo.jpg'],
+                ['name' => 'Expert Associé', 'role' => 'Conseil & Relations institutionnelles', 'bio' => 'Réseau institutionnel panafricain, expertise en partenariats public-privé et structuration de projets à impact.', 'photo' => 'team-member3.jpg'],
+            ];
+            @endphp
+
+            @foreach($members as $i => $m)
+            <div class="h-team-card reveal reveal-delay-{{ $i + 1 }}">
+                <div class="h-team-card__photo">
+                    <img src="{{ asset('images/' . $m['photo']) }}" alt="{{ $m['name'] }}" loading="lazy">
+                </div>
+                <div class="h-team-card__body">
+                    <strong class="h-team-card__name">{{ $m['name'] }}</strong>
+                    <span class="h-team-card__role">{{ $m['role'] }}</span>
+                    <p class="h-team-card__bio">{{ $m['bio'] }}</p>
+                </div>
+            </div>
+            @endforeach
+        </div>
+
+        <div class="h-team__cta reveal">
+            <a href="{{ route('team') }}" class="h-btn h-btn--primary">
+                Voir toute l'équipe
+                <svg viewBox="0 0 12 13" fill="none"><path d="M1.78 3.04h5.85L0 10.68l1.81 1.81 7.63-7.63v5.85H12V.49H1.78v2.55z" fill="currentColor"/></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+{{-- ═══════════════════════════════════════════
+     10. CARRIÈRES
+═══════════════════════════════════════════ --}}
+<section class="h-section h-section--dark" id="carrieres" aria-label="Rejoindre ARIES">
+    <div class="h-container">
+        <div class="h-careers">
+            <div class="h-careers__content reveal">
+                <p class="h-kicker h-kicker--gold">Carrières</p>
+                <h2 class="h-display h-display--light">
+                    Rejoignez une équipe engagée dans la transformation de l'Afrique
+                </h2>
+                <p class="h-careers__text">
+                    Nous recherchons des talents ambitieux, rigoureux et passionnés par les enjeux économiques et stratégiques du continent africain.
+                </p>
+                <div class="h-careers__ctas reveal reveal-delay-1">
+                    <a href="{{ route('contact') }}" class="h-btn h-btn--primary">
+                        Candidature spontanée
+                        <svg viewBox="0 0 12 13" fill="none"><path d="M1.78 3.04h5.85L0 10.68l1.81 1.81 7.63-7.63v5.85H12V.49H1.78v2.55z" fill="currentColor"/></svg>
+                    </a>
+                    <a href="{{ route('contact') }}" class="h-btn h-btn--ghost">
+                        Voir les opportunités
+                    </a>
+                </div>
+            </div>
+            <div class="h-careers__visual reveal-right">
+                <img src="{{ asset('images/team-meeting.jpg') }}" alt="Équipe ARIES en réunion stratégique" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- ═══════════════════════════════════════════
+     11. ACTUALITÉS / PUBLICATIONS
+═══════════════════════════════════════════ --}}
+<section class="h-section h-section--light" id="publications" aria-label="Actualités et analyses">
+    <div class="h-container">
+        <div class="h-strip-head reveal">
+            <div>
+                <p class="h-kicker">Analyses & insights</p>
+                <h2 class="h-display">Dernières publications</h2>
+            </div>
+            <a href="{{ route('publications') }}" class="h-mini-link">Voir tout ↗</a>
+        </div>
+
+        <div class="h-articles">
+            @php
+            $articles = [
+                ['tag' => 'Analyse', 'title' => "L'Afrique centrale, nouveau hub d'investissement", 'desc' => "Lecture des dynamiques d'investissement et des opportunités qui structurent la sous-région.", 'date' => 'Mars 2025', 'image' => 'sector-infra.jpg'],
+                ['tag' => 'Perspectives', 'title' => 'Financement des infrastructures : nouveaux équilibres', 'desc' => 'Comment mobiliser dette, capital patient et partenaires institutionnels sur les projets structurants.', 'date' => 'Fév. 2025', 'image' => 'hero-bridge.jpg'],
+                ['tag' => 'Secteurs', 'title' => 'Agrobusiness : transformer le potentiel en projets bancables', 'desc' => "Des chaînes de valeur à la structuration financière, les leviers concrets pour passer à l'exécution.", 'date' => 'Jan. 2025', 'image' => 'sector-agro.jpg'],
+            ];
+            @endphp
+
+            @foreach($articles as $i => $a)
+            <a href="{{ route('publications') }}" class="h-article reveal reveal-delay-{{ $i + 1 }}">
+                <div class="h-article__media">
+                    <img src="{{ asset('images/' . $a['image']) }}" alt="{{ $a['title'] }}" loading="lazy">
+                    <span class="h-article__tag">{{ $a['tag'] }}</span>
+                </div>
+                <div class="h-article__body">
+                    <span class="h-article__date">{{ $a['date'] }}</span>
+                    <h3>{{ $a['title'] }}</h3>
+                    <p>{{ $a['desc'] }}</p>
+                </div>
+            </a>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+{{-- ═══════════════════════════════════════════
+     12. CONTACT
+═══════════════════════════════════════════ --}}
+<section class="h-section h-section--neutral" id="contact" aria-label="Nous contacter">
+    <div class="h-container">
+        <div class="h-contact">
+            <div class="h-contact__info reveal-left">
+                <p class="h-kicker">Contact</p>
+                <h2 class="h-display">Parlons de<br>votre projet</h2>
+                <p class="h-prose">
+                    Investisseur, entrepreneur ou institution — prenons le temps d'un échange pour cadrer les bonnes options ensemble.
+                </p>
+
+                <div class="h-contact__details">
+                    <div class="h-contact__item">
+                        <span class="h-contact__icon">✉</span>
+                        <a href="mailto:contact@aries.loicmackosso.com">contact@aries.loicmackosso.com</a>
+                    </div>
+                    <div class="h-contact__item">
+                        <span class="h-contact__icon">☎</span>
+                        <a href="tel:+242000000000">+242 06 000 00 00</a>
+                    </div>
+                    <div class="h-contact__item">
+                        <span class="h-contact__icon">◎</span>
+                        <span>Brazzaville, République du Congo</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="h-contact__form reveal-right">
+                <form action="{{ route('contact.send') }}" method="POST" class="h-form">
+                    @csrf
+                    <div class="h-form__row">
+                        <div class="h-form__field">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" name="name" placeholder="Jean Dupont" required>
+                        </div>
+                        <div class="h-form__field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="jean@entreprise.com" required>
+                        </div>
+                    </div>
+                    <div class="h-form__field">
+                        <label for="subject">Sujet</label>
+                        <input type="text" id="subject" name="subject" placeholder="Structuration d'un projet d'infrastructure">
+                    </div>
+                    <div class="h-form__field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet ou votre demande…" required></textarea>
+                    </div>
+                    <button type="submit" class="h-btn h-btn--primary h-btn--full">
+                        Envoyer le message
+                        <svg viewBox="0 0 12 13" fill="none"><path d="M1.78 3.04h5.85L0 10.68l1.81 1.81 7.63-7.63v5.85H12V.49H1.78v2.55z" fill="currentColor"/></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- ═══════════════════════════════════════════
+     13. CTA FINAL
+═══════════════════════════════════════════ --}}
+<section class="h-cta-final" aria-label="Appel à l'action final">
+    <div class="h-cta-final__media">
+        <img src="{{ asset('images/hero-building.jpg') }}" alt="Skyline africain" loading="lazy">
+        <div class="h-cta-final__overlay"></div>
+    </div>
+    <div class="h-cta-final__content reveal">
+        <h2 class="h-cta-final__title">
+            Donnez une nouvelle dimension<br>à vos investissements
+        </h2>
+        <p class="h-cta-final__sub">
+            ARIES vous accompagne de la stratégie à l'exécution.
+        </p>
+        <a href="{{ route('contact') }}" class="h-btn h-btn--primary h-btn--lg">
+            Nous contacter
+            <svg viewBox="0 0 12 13" fill="none"><path d="M1.78 3.04h5.85L0 10.68l1.81 1.81 7.63-7.63v5.85H12V.49H1.78v2.55z" fill="currentColor"/></svg>
+        </a>
     </div>
 </section>
 

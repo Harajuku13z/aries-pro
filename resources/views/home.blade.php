@@ -115,52 +115,49 @@
 @endphp
 
 <section class="aries-home-hero" aria-label="Introduction">
-    <div class="max-w-[1440px] mx-auto px-5 lg:px-10 xl:px-16">
-        <div class="aries-home-hero__panel">
-            <div class="aries-home-hero__copy">
-                <p class="aries-kicker aries-kicker--hero reveal">ARIES Investissements · Brazzaville et Washington</p>
+    <div class="aries-home-hero__media">
+        <img
+            src="{{ asset('images/team-photo.jpg') }}"
+            alt="Équipe ARIES Investissements illustrant la croissance et l’accompagnement"
+            loading="eager"
+        >
+        <div class="aries-home-hero__overlay"></div>
+    </div>
 
-                <h1 class="aries-home-hero__title reveal reveal-delay-1">
-                    Accélérer
-                    <span class="aries-home-hero__title-line">
-                        <span class="aries-home-hero__squiggle" aria-hidden="true">
-                            <svg viewBox="0 0 273 121" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M271 0V74.415H251.492V19.583H202.906V0H271Z" fill="currentColor"/>
-                                <path d="M19.508 46.5845V93.3073L21.986 99.067L26.5761 101.417H68.0829V121H0V46.5845H19.508Z" fill="currentColor"/>
-                                <path d="M106.411 75.9475L162.534 14.1611C171.844 3.90916 188.849 10.5292 188.849 24.3981V75.9475L244.973 14.1611L259.388 27.3555L195.654 97.5205L195.653 97.5194C186.343 107.77 169.341 101.151 169.341 87.2824V35.7319L113.216 97.5205L113.215 97.5194C103.905 107.771 86.9026 101.151 86.9026 87.2824V37.426L28.5155 107.492L13.5528 94.9275L79.6723 15.583C88.7568 4.67857 106.411 11.1569 106.411 25.3318V75.9475Z" fill="currentColor"/>
+    <div class="aries-home-hero__panel">
+        <div class="aries-home-hero__copy">
+            <h1 class="aries-home-hero__title reveal reveal-delay-1">
+                Accélérer
+                <span class="aries-home-hero__title-line">
+                    <span class="aries-home-hero__squiggle" aria-hidden="true">
+                        <svg viewBox="0 0 273 121" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M271 0V74.415H251.492V19.583H202.906V0H271Z" fill="currentColor"/>
+                            <path d="M19.508 46.5845V93.3073L21.986 99.067L26.5761 101.417H68.0829V121H0V46.5845H19.508Z" fill="currentColor"/>
+                            <path d="M106.411 75.9475L162.534 14.1611C171.844 3.90916 188.849 10.5292 188.849 24.3981V75.9475L244.973 14.1611L259.388 27.3555L195.654 97.5205L195.653 97.5194C186.343 107.77 169.341 101.151 169.341 87.2824V35.7319L113.216 97.5205L113.215 97.5194C103.905 107.771 86.9026 101.151 86.9026 87.2824V37.426L28.5155 107.492L13.5528 94.9275L79.6723 15.583C88.7568 4.67857 106.411 11.1569 106.411 25.3318V75.9475Z" fill="currentColor"/>
+                        </svg>
+                    </span>
+                    la croissance
+                </span>
+                en Afrique
+            </h1>
+
+            <div class="aries-home-hero__support">
+                <div class="aries-home-hero__prose reveal reveal-delay-2">
+                    <p>
+                        Nous aidons investisseurs, institutions et porteurs de projets à s’implanter, structurer et accélérer leurs opérations en Afrique centrale, plus vite, plus clairement et sans friction inutile.
+                    </p>
+                </div>
+
+                <div class="reveal reveal-delay-3">
+                    <a href="{{ route('expertise') }}" class="aries-hero-cta" aria-label="En savoir plus sur notre expertise">
+                        <span class="aries-hero-cta__label">En savoir plus</span>
+                        <span class="aries-hero-cta__arrow" aria-hidden="true">
+                            <svg viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.77951 3.04422L7.63351 3.04422L0.000488281 10.6772L1.80951 12.4854L9.44253 4.85233L9.44253 10.7063H12.0005V0.485352L1.77951 0.485352L1.77951 3.04422Z" fill="currentColor"/>
                             </svg>
                         </span>
-                        la croissance
-                    </span>
-                    en Afrique
-                </h1>
-
-                <div class="aries-home-hero__support">
-                    <div class="aries-home-hero__prose reveal reveal-delay-2">
-                        <p>
-                            Nous aidons investisseurs, institutions et porteurs de projets à s’implanter, structurer et accélérer leurs opérations en Afrique centrale, plus vite, plus clairement et sans friction inutile.
-                        </p>
-                    </div>
-
-                    <div class="reveal reveal-delay-3">
-                        <a href="{{ route('expertise') }}" class="aries-btn aries-btn--primary">
-                            Voir notre valeur
-                            <span class="aries-btn__icon" aria-hidden="true">
-                                <svg viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1.77951 3.04422L7.63351 3.04422L0.000488281 10.6772L1.80951 12.4854L9.44253 4.85233L9.44253 10.7063H12.0005V0.485352L1.77951 0.485352L1.77951 3.04422Z" fill="currentColor"/>
-                                </svg>
-                            </span>
-                        </a>
-                    </div>
+                    </a>
                 </div>
-            </div>
-
-            <div class="aries-home-hero__image reveal reveal-delay-4">
-                <img
-                    src="{{ asset('images/hero-building.jpg') }}"
-                    alt="Panorama urbain illustrant la croissance et l’investissement"
-                    loading="eager"
-                >
             </div>
         </div>
     </div>

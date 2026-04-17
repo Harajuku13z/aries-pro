@@ -1,6 +1,6 @@
 {{-- ─── ARIES Header ─── --}}
 <header class="site-header">
-    <div class="site-header__inner max-w-[1440px] mx-auto px-5 lg:px-10 xl:px-16">
+    <div class="site-header__inner">
         <div class="header-shell">
             <a href="{{ route('home') }}" class="brand-link" aria-label="ARIES Investissements — Accueil">
                 <img
@@ -21,12 +21,6 @@
             </nav>
 
             <div class="header-actions">
-                <div class="header-meta hidden lg:flex">
-                    <span class="header-meta__label">Brazzaville</span>
-                    <span class="header-meta__separator"></span>
-                    <span class="header-meta__label">Washington</span>
-                </div>
-
                 <a href="{{ route('contact') }}" class="hidden lg:inline-flex header-cta header-cta--ghost">
                     Nous contacter
                 </a>

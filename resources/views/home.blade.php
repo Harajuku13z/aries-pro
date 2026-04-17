@@ -178,7 +178,7 @@
 
 <section class="aries-home-section aries-split-section aries-split-section--alt" aria-label="Nos secteurs prioritaires">
     <div class="h-container">
-        <div class="aries-split aries-split--reverse">
+        <div class="aries-split aries-split--reverse aries-split--match-height">
             <div class="aries-split__media reveal-right">
                 <img src="{{ asset('images/hero-bridge.jpg') }}" alt="Infrastructure symbolisant la connexion entre stratégie et exécution" loading="lazy">
             </div>

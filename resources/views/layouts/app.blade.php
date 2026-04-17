@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#040C18">
 
     <title>@yield('title', 'ARIES Investissements — Conseil financier & Investissement en Afrique')</title>
     <meta name="description" content="@yield('description', 'ARIES Investissements accompagne investisseurs et porteurs de projets en Afrique. Conseil stratégique, levée de fonds, intelligence économique depuis Brazzaville.')">
@@ -16,11 +17,14 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+    <script>
+        document.documentElement.classList.add('js');
+    </script>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('head')
 </head>
-<body class="bg-[#FAFAF8]">
+<body class="bg-[#F4F6F8]">
 
     @include('components.header')
 

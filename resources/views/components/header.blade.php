@@ -38,20 +38,28 @@
                     Contact
                 </a>
 
-                <button
-                    type="button"
-                    class="header-mobile-toggle lg:hidden"
-                    aria-label="Ouvrir le menu"
-                    aria-expanded="false"
-                    aria-controls="mobile-navigation"
-                    data-mobile-menu-toggle
-                >
-                    <span class="header-mobile-toggle__bars" aria-hidden="true">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                <div class="header-mobile-tools lg:hidden">
+                    <span class="header-mobile-search" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2"/>
+                            <path d="M16 16L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
                     </span>
-                </button>
+
+                    <button
+                        type="button"
+                        class="header-mobile-toggle"
+                        aria-label="Ouvrir le menu"
+                        aria-expanded="false"
+                        aria-controls="mobile-navigation"
+                        data-mobile-menu-toggle
+                    >
+                        <span class="header-mobile-toggle__bars" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
+                </div>
             </div>
         </div>
 

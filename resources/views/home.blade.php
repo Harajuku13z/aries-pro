@@ -83,14 +83,14 @@
                 </div>
 
                 <div class="aries-landing-hero__footer">
-                    <div class="aries-landing-hero__support reveal" data-delay="160">
+                    <div class="aries-landing-hero__support reveal visible" data-delay="160">
                         <p class="aries-landing-hero__description">
                             Nous accompagnons investisseurs, institutions et dirigeants dans la structuration,
                             le financement et l'exécution de projets ambitieux en Afrique centrale.
                         </p>
                     </div>
 
-                    <a href="{{ route('presentation') }}" class="aries-hero-cta reveal" data-delay="240">
+                    <a href="{{ route('presentation') }}" class="aries-hero-cta reveal visible" data-delay="240">
                         <span class="aries-hero-cta__label">En savoir plus</span>
                         <span class="aries-hero-cta__icon" aria-hidden="true">
                             <svg viewBox="0 0 12 13" fill="none">

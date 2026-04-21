@@ -65,7 +65,7 @@
     <div class="h-hero__media">
         <img
             src="{{ asset('images/lion-ambition.jpg') }}"
-            alt="Lion illustrant la vision, la maîtrise et l'ambition portées par ARIES Investissements"
+            alt="Horizon africain illustrant la vision, la maîtrise et l'ambition portées par ARIES Investissements"
             loading="eager"
         >
         <div class="h-hero__overlay"></div>
@@ -144,7 +144,7 @@
     <div class="h-container">
         <div class="aries-split aries-split--match-height">
             <div class="aries-split__media reveal-left">
-                <img src="{{ asset('images/about-africa.jpg') }}" alt="Vue urbaine illustrant le marché africain accompagné par ARIES" loading="lazy">
+                <img src="{{ asset('images/about-africa.jpg') }}" alt="Vue urbaine de Brazzaville illustrant le marché africain accompagné par ARIES" loading="lazy">
             </div>
 
             <div class="aries-split__content reveal-right">
@@ -175,7 +175,7 @@
     <div class="h-container">
         <div class="aries-split aries-split--reverse aries-split--match-height">
             <div class="aries-split__media reveal-right">
-                <img src="{{ asset('images/hero-bridge.jpg') }}" alt="Infrastructure symbolisant la connexion entre stratégie et exécution" loading="lazy">
+                <img src="{{ asset('images/hero-bridge.jpg') }}" alt="Fleuve Congo symbole de connexion entre stratégie et exécution au Congo Brazzaville" loading="lazy">
             </div>
 
             <div class="aries-split__content reveal-left">
@@ -249,7 +249,7 @@
     <div class="h-container">
         <div class="aries-cta-band reveal">
             <div class="aries-cta-band__media">
-                <img src="{{ asset('images/hero-main.jpg') }}" alt="Projet immobilier illustrant la montée en puissance des investissements ARIES" loading="lazy">
+                <img src="{{ asset('images/hero-main.jpg') }}" alt="Projet immobilier en Afrique centrale illustrant la montée en puissance des investissements ARIES" loading="lazy">
             </div>
 
             <div class="aries-cta-band__content">

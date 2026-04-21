@@ -22,7 +22,7 @@
                 >
             </a>
 
-            <nav class="header-nav hidden lg:flex items-center" aria-label="Navigation principale">
+            <nav class="header-nav" aria-label="Navigation principale">
                 @foreach ($navigationItems as $item)
                     <a
                         href="{{ route($item['route']) }}"
@@ -34,11 +34,11 @@
             </nav>
 
             <div class="header-actions">
-                <a href="{{ route('contact') }}" class="hidden lg:inline-flex header-cta header-cta--ghost">
+                <a href="{{ route('contact') }}" class="header-cta header-cta--ghost header-cta--desktop-only">
                     Contact
                 </a>
 
-                <div class="header-mobile-tools lg:hidden">
+                <div class="header-mobile-tools header-mobile-tools--mobile-only">
                     <span class="header-mobile-search" aria-hidden="true">
                         <svg viewBox="0 0 24 24" fill="none">
                             <circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2"/>

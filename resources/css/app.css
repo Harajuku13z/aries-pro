@@ -541,9 +541,9 @@ html.menu-open body {
 }
 
 .h-hero__inner {
-    max-width: var(--W);
+    max-width: 100%;
     margin-inline: auto;
-    padding-inline: var(--pad);
+    padding-inline: clamp(1.5rem, 4vw, 5rem);
     padding-top: 80px; /* header height */
 }
 
@@ -2130,9 +2130,9 @@ html.menu-open body {
     position: relative;
     z-index: 1;
     width: 100%;
-    max-width: 1480px;
+    max-width: 100%;
     margin-inline: auto;
-    padding: calc(6rem + 4vw) clamp(1.25rem, 2vw, 2rem) 2.5rem;
+    padding: calc(6rem + 4vw) clamp(1.5rem, 4vw, 5rem) 2.5rem;
 }
 
 .page-hero__content { max-width: 58rem; }
@@ -3001,7 +3001,7 @@ html.menu-open body {
     }
 
     .page-hero__inner {
-        padding-inline: 1.25rem;
+        padding-inline: clamp(1rem, 3vw, 2rem);
     }
 
     .page-hero__pills {

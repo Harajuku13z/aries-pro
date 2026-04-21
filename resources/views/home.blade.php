@@ -10,7 +10,7 @@
             'label' => '01',
             'title' => 'Conseiller',
             'description' => 'Diagnostic stratégique, lecture marché et cadrage des décisions qui conditionnent la réussite du projet.',
-            'image' => 'about-africa.jpg',
+            'image' => 'service-conseiller.jpg',
             'href' => route('presentation'),
         ],
         [
@@ -144,7 +144,7 @@
     <div class="h-container">
         <div class="aries-split aries-split--match-height">
             <div class="aries-split__media reveal-left">
-                <img src="{{ asset('images/about-africa.jpg') }}" alt="Vue urbaine de Brazzaville illustrant le marché africain accompagné par ARIES" loading="lazy">
+                <img src="{{ asset('images/section-avantage.jpg') }}" alt="Ingénieure africaine sur le terrain — expertise locale ARIES Investissements" loading="lazy">
             </div>
 
             <div class="aries-split__content reveal-right">

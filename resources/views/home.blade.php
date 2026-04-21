@@ -64,8 +64,8 @@
 <section class="h-hero aries-landing-hero" id="accueil" aria-label="Accueil ARIES">
     <div class="h-hero__media">
         <img
-            src="{{ asset('images/lion-ambition.jpg') }}"
-            alt="Horizon africain illustrant la vision, la maîtrise et l'ambition portées par ARIES Investissements"
+            src="{{ asset('images/hero-brazzaville.jpg') }}"
+            alt="Pont de Brazzaville sur le fleuve Congo — symbole de la vision et de l'ambition d'ARIES Investissements"
             loading="eager"
         >
         <div class="h-hero__overlay"></div>
